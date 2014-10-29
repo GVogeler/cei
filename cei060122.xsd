@@ -7,6 +7,7 @@
         (Charters Encoding Initiative, http://www.cei.lmu.de) folgen.</xs:documentation>
       <xs:documentation xml:lang="en">abstract root element</xs:documentation>
       <xs:documentation>Revision History (if not explicit stated all changes by Georg Vogeler)
+  2014-10-28: introduced bibl@key and @resp for p and abstract 
   2014-10-21: elemente ref allowed to contain layout elements
   2014-01-16: introduced @sameAs as a global attribute 
   2014-01-11: archIdentifier/ref introduced       
@@ -478,6 +479,7 @@
                 </xs:choice>
               </xs:sequence>
               <xs:attributeGroup ref="standard"/>
+              <xs:attribute ref="resp"/>
             </xs:complexType>
           </xs:element>
           <xs:group ref="relevantPersonal"/>
@@ -516,24 +518,26 @@
           </xs:element>
           <xs:element ref="witList"/>
           <xs:element ref="diplomaticAnalysis"/>
-          <xs:element name="class">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">classifciation of the document in prose (e.g. breve,
-                writ, preceptum, mandato, Bulle, recognitio feodorum, oblatio, transsumptum ...) or
-                with reference to a taxonomy indicated generally in the encodingDesc or specifically in the target attribute</xs:documentation>
-              <!-- Offen ist, wie diese Klassifikation expliziert mit einer externen Taxonomie verbunden werden kann -->
-            </xs:annotation>
-            <xs:complexType>
-              <xs:attribute ref="target"/>
-              <xs:attribute ref="resp"/>
-              <xs:attributeGroup ref="standard"/>
-            </xs:complexType>
-          </xs:element>
+          <xs:element ref="class"/>
           <xs:group ref="layout"/>
           <xs:group ref="reference"/>
           <xs:group ref="textualElements"/>
         </xs:choice>
       </xs:sequence>
+      <xs:attributeGroup ref="standard"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element 
+  <xs:element name="class">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">classifciation of the document in prose (e.g. breve,
+        writ, preceptum, mandato, Bulle, recognitio feodorum, oblatio, transsumptum ...) or
+        with reference to a taxonomy indicated generally in the encodingDesc or specifically in the target attribute</xs:documentation>
+      <!-- Offen ist, wie diese Klassifikation expliziert mit einer externen Taxonomie verbunden werden kann -->
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute ref="target"/>
+      <xs:attribute ref="resp"/>
       <xs:attributeGroup ref="standard"/>
     </xs:complexType>
   </xs:element>
@@ -1270,6 +1274,7 @@
       </xs:sequence>
       <xs:attributeGroup ref="standard"/>
       <xs:attribute ref="decls" use="optional"/>
+      <xs:attribute ref="resp" use="optional"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="decoDesc">
@@ -2415,6 +2420,7 @@
             gemacht werden soll. [strict!]</xs:documentation>
         </xs:annotation>
       </xs:attribute>
+      <xs:attribute ref="key"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="imprint">
