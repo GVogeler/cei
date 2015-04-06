@@ -245,12 +245,11 @@
         <xs:choice>
           <xs:element ref="p"/>
           <xs:element name="geoDecl">
+          <xs:annotation>
+          <xs:documentation xml:lang="en">documents the notation and the datum used for geographic coordinates expressed as content of the geo element elsewhere within the document.</xs:documentation></xs:annotation>
             <xs:complexType mixed="true">
-              <xs:openContent mode="interleave">
-                <xs:any/>
-              </xs:openContent>
-              <xs:attribute name="datum"/>
               <xs:attributeGroup ref="standard"/>
+              <xs:attribute name="datum"/>
             </xs:complexType>
           </xs:element>
         </xs:choice>
@@ -592,17 +591,28 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="location">
+  	<xs:annotation>
+		<xs:documentation xml:lang="en">defines the location of a place as a set of geographical coordinates, in terms of other named geo-political entities, or as an address.</xs:documentation>
+  	</xs:annotation>
     <xs:complexType>
-      <xs:choice>
+      <xs:choice minOccurs="0" maxOccurs="1">
         <xs:element ref="geo"/>
+        <xs:sequence>
+        	<xs:element ref="placeName" minOccurs="0"/>
+        	<xs:element ref="settlement" minOccurs="0"/>
+        	<xs:element ref="country" minOccurs="0"/>
+        </xs:sequence>
       </xs:choice>
       <xs:attributeGroup ref="standard"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="geo">
+  	<xs:annotation>
+  	  <xs:documentation xml:lang="en">contains any expression of a set of geographic coordinates, representing a point, line, or area on the surface of the earth in some notation</xs:documentation>
+  	</xs:annotation>
     <xs:complexType mixed="true">
-      <xs:attribute name="datum"/>
       <xs:attributeGroup ref="standard"/>
+      <xs:attribute ref="decls"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="dimensions">
@@ -3636,3 +3646,4 @@
     </xs:annotation>
   </xs:attribute>
 </xs:schema>
+
