@@ -7,77 +7,100 @@
         (Charters Encoding Initiative, http://www.cei.lmu.de) folgen.</xs:documentation>
       <xs:documentation xml:lang="en">abstract root element</xs:documentation>
       <xs:documentation>Revision History (if not explicit stated all changes by Georg Vogeler)
-  2014-10-28: introduced bibl@key and @resp for p and abstract 
-  2014-10-21: elemente ref allowed to contain layout elements
-  2014-01-16: introduced @sameAs as a global attribute 
-  2014-01-11: archIdentifier/ref introduced       
-  2013-01-30: more strict hierarchy "charter" introduced
-  2011-11-18: corr um elementgroup transcription erweitert, idno/add|corr zugelassen, index/group:content erlaubt
-  2011-11-17: notariusSub/notarius|persName präzisiert
-  2011-11-15: issueDate hinzugefügt
-  2011-10-10: keine Namespaces für cei: verwendet
-  2011-04-26: shape, ties, colour, counterseal als Unterelemente von seal eingeführt
-  2011-04-25: subscriptio als Teil von auth eingeführt
-  2011-01-31: plica als Teil von dimensions eingeführt
-  2011-01-27: testisSigilli eingeführt
-  2011-01-26: notarius als relevantPersonal eingeführt.
-  2010-04-26: decoDesc eingeführt, class mit @resp und @target (für die Referenz auf eine externe Taxonomie) versehen
-  2010-03-01: availability/p eingeführt, div@type=charter/... ermöglicht; layout als Kind von index ermöglicht, einige weitere Erweiterungen
-  2010-02-26: testes auch in auth  zugelassen, foreign als Teil von testis eingeführt
-  2010-01-20: inscriptio dem italienischen Modell (Pratesi, Genesi e forme,
-        1999, pp. 76-77) folgend auch in der narration und der dispositio zugelassen (GV)
-  2009-12-21: relevantPersonal direkt unter chDesc
-        zugelassen 
-  2009-11-23: cit@type eingeführt 
-  2009-10-16: group|text als Alternatives Element
-        eingeführt 
-  2009-10-13: englische Dokumentation mit den Angaben aus der Datenbank ergänzt;
-        einige Definitionen aus der TEI ergänzt, notariusStruct und dateSort getilgt (GV)
-  2009-10-04: Siegelmodell auf sealDesc/seal reduziert. (GV) 
-  2009-10-03: englische
-        Dokumentation bis name="nota" (excl.) ergänzt (GV) 
-  2009-09-29: englische Dokumentation bis
-        name="invocatio" (incl.) entered (GV) 
-  2009-09-27: englische Dokumentation bis
-        name="elongata" (incl.) ergänzt (GV) 
-  2009-09-21: authenticity eaingeführt, englische
-        Dokumentation bis name="app" ergänzt (GV) 
-  2009-06-03: i aus der Layout-Gruppe genommen.
-        altIdentifier eingeführt (GV) 
-  2009-05-08: scope mit group:layout versehen 
-  2009-05-07:
-        notariusDesc enthält group:layout 
-  2009-05-06: notariusDesc enthält group:textualElements;
-        figure/graphic mehr als Einmal zugelassen 
-  2009-04-29: dateRange nach Modell date mit
-        Transkription etc. und @from/to als xs:anySimpleType gestaltet 
-  2009-01-29 testes für eine
-        Zeugenliste hinzugefügt; note und head als Subelemente für listBibl eingeführt lem-content
-        ausgemistet; @wit zu rdg hinzugefügt. 
-  2009-01-26: settlement/region/country aus
-        group:biblArch rausgenommen, damit es nicht mit group:geog kollidiert. Muß eigentlich auch
-        in archIdentifier/msIdentifier reichen. 
-  2008-02-07: region/country verbessert 
-  2008-01-31:
-        element name="span" eingeführt 
-  2008-01-21: @usage eingefügt 
-	2007-12-17: c@desc hinzugefügt
-        (@type wäre für deklarierte Elemente (könnte dann auch decl werden) und @desc für Freitext)
-	2007-09-24: support eingeführt und seal als Subelement von sealDesc zugelassen (mit
-        kopierter Definition, layoutDesc/layout eingeführt, handDesc als Kopie von scribe TODO:
-        scribe sollte durch handDesc ersetzt werden! (GV) 
-	2007-07-24: decls-Attribut zu p/div/text
-        zugelassen (vgl. TEI), einige MOM-Spezifische Grundangaben für den Gesamtfront eingeführt,
-        die eigentlich in den teiHeader gehören würden. (gv) 
-	2006-11-15: Mehrere Urkunden
-        zusammengefaßt über Ausweitung der Charter Description-Elemente in front abgedeckt
-	2006-09-13: Rubrum nachgetragen, andere Elemente etwas großzügiger behandelt (GV)
-	2006-08-10: archIdentifier kann auch über settlement und repository statt über arch näher
-        erschlossen werden. 
-	2006-08-08: archIdentifier offener gestaltet, dateSort in ein allgemeins
-        date-Konstrukt integriert. 
-	2006-05-16: type-Attribute auch bei geogName;
-        &lt;back&gt; mit Inhalten versehen (GV) </xs:documentation>
+       
+	2015-04-02: introduced issuePlace/location/geo 
+ 	     introduced encodingDesc/geoDecl|p;
+	     introduced issuePlace/place; 
+	     introduced issueDate/date	     
+	2015-03-12:
+        introduced idno for bibl/imprint and bibl
+	2014-10-28: introduced bibl@key and @resp for p
+        and abstract
+	2014-10-21: elemente ref allowed to contain layout elements
+	2014-01-16:
+        introduced @sameAs as a global attribute
+	2014-01-11: archIdentifier/ref introduced
+       
+	2013-01-30: more strict hierarchy "charter" introduced
+	2011-11-18: corr um elementgroup
+        transcription erweitert, idno/add|corr zugelassen, index/group:content erlaubt
+	2011-11-17:
+        notariusSub/notarius|persName präzisiert
+	2011-11-15: issueDate hinzugefügt
+	2011-10-10: keine
+        Namespaces für cei: verwendet
+	2011-04-26: shape, ties, colour, counterseal als Unterelemente
+        von seal eingeführt
+	2011-04-25: subscriptio als Teil von auth eingeführt
+	2011-01-31: plica
+        als Teil von dimensions eingeführt
+	2011-01-27: testisSigilli eingeführt
+	2011-01-26: notarius
+        als relevantPersonal eingeführt.
+	2010-04-26: decoDesc eingeführt, class mit @resp und
+        @target (für die Referenz auf eine externe Taxonomie) versehen
+	2010-03-01: availability/p
+        eingeführt, div@type=charter/... ermöglicht; layout als Kind von index ermöglicht, einige
+        weitere Erweiterungen
+	2010-02-26: testes auch in auth zugelassen, foreign als Teil von
+        testis eingeführt
+	2010-01-20: inscriptio dem italienischen Modell (Pratesi, Genesi e forme,
+        1999, pp. 76-77) folgend auch in der narration und der dispositio zugelassen (GV)  
+	2009-12-21: relevantPersonal direkt unter chDesc zugelassen
+	2009-11-23: cit@type eingeführt
+       
+	2009-10-16: group|text als Alternatives Element eingeführt
+	2009-10-13: englische
+        Dokumentation mit den Angaben aus der Datenbank ergänzt; einige Definitionen aus der TEI
+        ergänzt, notariusStruct und dateSort getilgt (GV)
+	2009-10-04: Siegelmodell auf sealDesc/seal
+        reduziert. (GV)
+	2009-10-03: englische Dokumentation bis name="nota" (excl.) ergänzt (GV)
+       
+	2009-09-29: englische Dokumentation bis name="invocatio" (incl.) entered (GV)
+	2009-09-27:
+        englische Dokumentation bis name="elongata" (incl.) ergänzt (GV)
+	2009-09-21: authenticity
+        eaingeführt, englische Dokumentation bis name="app" ergänzt (GV)
+	2009-06-03: i aus der
+        Layout-Gruppe genommen. altIdentifier eingeführt (GV)
+	2009-05-08: scope mit group:layout
+        versehen
+	2009-05-07: notariusDesc enthält group:layout
+	2009-05-06: notariusDesc enthält
+        group:textualElements; figure/graphic mehr als Einmal zugelassen
+	2009-04-29: dateRange nach
+        Modell date mit Transkription etc. und @from/to als xs:anySimpleType gestaltet
+	2009-01-29
+        testes für eine Zeugenliste hinzugefügt; note und head als Subelemente für listBibl
+        eingeführt lem-content ausgemistet; @wit zu rdg hinzugefügt.
+	2009-01-26:
+        settlement/region/country aus group:biblArch rausgenommen, damit es nicht mit group:geog
+        kollidiert. Muß eigentlich auch in archIdentifier/msIdentifier reichen.
+	2008-02-07:
+        region/country verbessert
+	2008-01-31: element name="span" eingeführt
+	2008-01-21: @usage
+        eingefügt
+	2007-12-17: c@desc hinzugefügt (@type wäre für deklarierte Elemente (könnte dann
+        auch decl werden) und @desc für Freitext)
+	2007-09-24: support eingeführt und seal als
+        Subelement von sealDesc zugelassen (mit kopierter Definition, layoutDesc/layout eingeführt,
+        handDesc als Kopie von scribe TODO: scribe sollte durch handDesc ersetzt werden! (GV)
+       
+	2007-07-24: decls-Attribut zu p/div/text zugelassen (vgl. TEI), einige MOM-Spezifische
+        Grundangaben für den Gesamtfront eingeführt, die eigentlich in den teiHeader gehören würden.
+        (gv)
+	2006-11-15: Mehrere Urkunden zusammengefaßt über Ausweitung der Charter
+        Description-Elemente in front abgedeckt
+	2006-09-13: Rubrum nachgetragen, andere Elemente
+        etwas großzügiger behandelt (GV)
+	2006-08-10: archIdentifier kann auch über settlement und
+        repository statt über arch näher erschlossen werden.
+	2006-08-08: archIdentifier offener
+        gestaltet, dateSort in ein allgemeins date-Konstrukt integriert.
+	2006-05-16: type-Attribute
+        auch bei geogName; &lt;back&gt; mit Inhalten versehen (GV) </xs:documentation>
     </xs:annotation>
     <xs:complexType>
       <xs:sequence>
@@ -93,27 +116,27 @@
               <xs:element name="fileDesc">
                 <xs:annotation>
                   <xs:documentation xml:lang="de">Beschreibung der Datei</xs:documentation>
-                  <xs:documentation xml:lang="en">a file description, tagged
-                    &lt;fileDesc&gt;, containing a full bibliographical description of the
-                    computer file itself, from which a user of the text could derive a proper
-                    bibliographic citation, or which a librarian or archivist could use in creating
-                    a catalogue entry recording its presence within a library or archive. The term
-                    computer file here is to be understood as referring to the whole entity or
-                    document described by the header, even when this is stored in several distinct
-                    operating system files. The file description also includes information about the
-                    source or sources from which the electronic document was
-                    derived.</xs:documentation>
+                  <xs:documentation xml:lang="en">a file description, tagged &lt;fileDesc&gt;,
+                    containing a full bibliographical description of the computer file itself, from
+                    which a user of the text could derive a proper bibliographic citation, or which
+                    a librarian or archivist could use in creating a catalogue entry recording its
+                    presence within a library or archive. The term computer file here is to be
+                    understood as referring to the whole entity or document described by the header,
+                    even when this is stored in several distinct operating system files. The file
+                    description also includes information about the source or sources from which the
+                    electronic document was derived.</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                   <xs:sequence>
                     <xs:choice minOccurs="0" maxOccurs="unbounded">
                       <xs:element name="titleStmt">
                         <xs:annotation>
-                          <xs:documentation xml:lang="de">Den Regeln der TEI entsprechend müßten hier
-                          verschiedene Elemente verpflichtend sein: title z.B.</xs:documentation>
+                          <xs:documentation xml:lang="de">Den Regeln der TEI entsprechend müßten
+                            hier verschiedene Elemente verpflichtend sein: title
+                            z.B.</xs:documentation>
                           <xs:documentation xml:lang="en">(title statement) groups information about
-                          the title of a work and those responsible for its intellectual
-                          content.</xs:documentation>
+                            the title of a work and those responsible for its intellectual
+                            content.</xs:documentation>
                         </xs:annotation>
                         <xs:complexType>
                           <xs:sequence>
@@ -178,11 +201,11 @@
               </xs:element>
               <xs:element name="revisionDesc" minOccurs="0">
                 <xs:annotation>
-                  <xs:documentation xml:lang="en">a revision history, tagged
-                    &lt;revisionDesc&gt;, which allows the encoder to provide a history of
-                    changes made during the development of the electronic text. The revision history
-                    is important for version control and for resolving questions about the history
-                    of a file.</xs:documentation>
+                  <xs:documentation xml:lang="en">a revision history, tagged &lt;revisionDesc&gt;,
+                    which allows the encoder to provide a history of changes made during the
+                    development of the electronic text. The revision history is important for
+                    version control and for resolving questions about the history of a
+                    file.</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                   <xs:sequence>
@@ -202,7 +225,7 @@
             <xs:element maxOccurs="1" ref="text"/>
             <xs:element maxOccurs="1" ref="charter"/>
           </xs:choice>
-            <xs:element maxOccurs="1" ref="group"/>
+          <xs:element maxOccurs="1" ref="group"/>
         </xs:choice>
       </xs:sequence>
       <xs:attributeGroup ref="standard"/>
@@ -218,11 +241,21 @@
         matters.</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
-      <xs:complexContent mixed="true">
-        <xs:extension base="xs:anyType">
-          <xs:attributeGroup ref="standard"/>
-        </xs:extension>
-      </xs:complexContent>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:choice>
+          <xs:element ref="p"/>
+          <xs:element name="geoDecl">
+            <xs:complexType mixed="true">
+              <xs:openContent mode="interleave">
+                <xs:any/>
+              </xs:openContent>
+              <xs:attribute name="datum"/>
+              <xs:attributeGroup ref="standard"/>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attributeGroup ref="standard"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="sourceDesc">
@@ -419,20 +452,18 @@
       <xs:attribute ref="certainty" use="optional"/>
     </xs:complexType>
   </xs:element>
-  
+
   <xs:element name="idno">
     <xs:annotation>
       <xs:documentation xml:lang="de">Die Identifikationsnummer eines Objektes innerhalb der
         aktuellen Struktur (z.B. Nummer in einem Urkundenbuch, Bestand in einem Archiv,
         Handschriftensignatur in einer Bibliothek.</xs:documentation>
       <xs:documentation xml:lang="en">contains the unique identifier of a document in a body of
-        documents or its locator in the holdings of an archives or a library ==Example==
-        &lt;text type="charter" name="1"&gt; &lt;idno&gt;1&lt;/idno&gt; ...
-        &lt;/text&gt; &lt;text type="charter" name="2"&gt;
-        &lt;idno&gt;1a&lt;/idno&gt; ... &lt;/text&gt; and
-        &lt;archStruct&gt; &lt;settlement&gt;München&lt;/settlement&gt;
-        &lt;arch&gt;Bayerisches Hauptstaatsarchiv&lt;/arch&gt;
-        &lt;archFond&gt;HU Passau&lt;/arch&gt;
+        documents or its locator in the holdings of an archives or a library ==Example== &lt;text
+        type="charter" name="1"&gt; &lt;idno&gt;1&lt;/idno&gt; ... &lt;/text&gt; &lt;text
+        type="charter" name="2"&gt; &lt;idno&gt;1a&lt;/idno&gt; ... &lt;/text&gt; and
+        &lt;archStruct&gt; &lt;settlement&gt;München&lt;/settlement&gt; &lt;arch&gt;Bayerisches
+        Hauptstaatsarchiv&lt;/arch&gt; &lt;archFond&gt;HU Passau&lt;/arch&gt;
         &lt;idno&gt;3&lt;/idno&gt; &lt;/archStruct&gt;</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
@@ -527,12 +558,12 @@
       <xs:attributeGroup ref="standard"/>
     </xs:complexType>
   </xs:element>
-  <xs:element 
   <xs:element name="class">
     <xs:annotation>
-      <xs:documentation xml:lang="en">classifciation of the document in prose (e.g. breve,
-        writ, preceptum, mandato, Bulle, recognitio feodorum, oblatio, transsumptum ...) or
-        with reference to a taxonomy indicated generally in the encodingDesc or specifically in the target attribute</xs:documentation>
+      <xs:documentation xml:lang="en">classifciation of the document in prose (e.g. breve, writ,
+        preceptum, mandato, Bulle, recognitio feodorum, oblatio, transsumptum ...) or with reference
+        to a taxonomy indicated generally in the encodingDesc or specifically in the target
+        attribute</xs:documentation>
       <!-- Offen ist, wie diese Klassifikation expliziert mit einer externen Taxonomie verbunden werden kann -->
     </xs:annotation>
     <xs:complexType>
@@ -548,11 +579,29 @@
       <xs:documentation xml:lang="en">place, where the charter is issued</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
-      <xs:sequence>
-        <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:sequence>
           <xs:group ref="textualElements"/>
-        </xs:choice>
-      </xs:sequence>
+        </xs:sequence>
+        <xs:sequence>
+          <xs:element ref="placeName"/>
+          <xs:element ref="location" minOccurs="0"/>
+        </xs:sequence>
+      </xs:choice>
+      <xs:attributeGroup ref="standard"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="location">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="geo"/>
+      </xs:choice>
+      <xs:attributeGroup ref="standard"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="geo">
+    <xs:complexType mixed="true">
+      <xs:attribute name="datum"/>
       <xs:attributeGroup ref="standard"/>
     </xs:complexType>
   </xs:element>
@@ -574,8 +623,9 @@
         </xs:element>
         <xs:element name="plica" type="xs:anySimpleType">
           <xs:annotation>
-            <xs:documentation xml:lang="en">contains the measurement of the turn up at the bottom of a charter to support the seal 
-              (VID 541), measured along the axis at right angles to the bottom of the written surface.</xs:documentation>
+            <xs:documentation xml:lang="en">contains the measurement of the turn up at the bottom of
+              a charter to support the seal (VID 541), measured along the axis at right angles to
+              the bottom of the written surface.</xs:documentation>
           </xs:annotation>
         </xs:element>
         <xs:element name="width" type="xs:anySimpleType">
@@ -714,10 +764,9 @@
                         document is the first written documentation of its authors will, it is
                         considered as an 'original'. Later copies can be specified as being
                         authenticated, inserted into other documents etc. ==Example==
-                        &lt;witness&gt; &lt;archIdentifier&gt;Palermo, ASt, Atti
-                        notarili 1 fol. 80&lt;/archIdentifier&gt;
-                        &lt;traditioForm&gt;authenticated copy&lt;transmission&gt;
-                        &lt;witness&gt;</xs:documentation>
+                        &lt;witness&gt; &lt;archIdentifier&gt;Palermo, ASt, Atti notarili 1 fol.
+                        80&lt;/archIdentifier&gt; &lt;traditioForm&gt;authenticated
+                        copy&lt;transmission&gt; &lt;witness&gt;</xs:documentation>
                     </xs:annotation>
                   </xs:element>
                   <xs:element name="sigil" type="xs:string">
@@ -733,30 +782,24 @@
                     <xs:annotation>
                       <xs:documentation xml:lang="en">contains a formal description of the physical
                         properties of the document excluding text and legal content. ==Example==
-                        &lt;physDesc&gt; &lt;material&gt;parchment, 10x12
-                        inch&lt;/material&gt; &lt;/physDesc&gt;
-                        &lt;auth&gt;&lt;seal&gt;I (&lt;sigillant&gt;Raimund
-                        de Mevolhon, Bischof von Gap (1282-1289)&lt;/sigillant&gt;), II.
+                        &lt;physDesc&gt; &lt;material&gt;parchment, 10x12 inch&lt;/material&gt;
+                        &lt;/physDesc&gt; &lt;auth&gt;&lt;seal&gt;I (&lt;sigillant&gt;Raimund de
+                        Mevolhon, Bischof von Gap (1282-1289)&lt;/sigillant&gt;), II.
                         (&lt;sigillant&gt;Romanus, Bischof von Epirus
-                        (1286-1298)&lt;/sigillant&gt;), III.
-                        (&lt;sigillant&gt;Waldebrunus, Bischof von Vlorá und
-                        Glabinitza&lt;/sigillant&gt;), IV. (&lt;sigillant&gt;Leo,
-                        Bischof von Calamon&lt;/sigillant&gt;), V.
-                        (&lt;sigillant&gt;Thomas, Bischof von
-                        Acerra&lt;/sigillant&gt;) Siegel von Seidenschnüren
-                        abgerissen.&lt;/seal&gt; -- &lt;seal&gt;VI. S. des
-                        &lt;sigillant&gt;Bischofs Leotherius von
-                        Veroli&lt;/sigillant&gt; an Seidenschnur beschädigt, in Maltha,
-                        spitzoval. Umschr.: &lt;legend&gt;S. L RVL
-                        ....&lt;/legend&gt; Auf der Rückseite das Signet
-                        undeutlich.&lt;/seal&gt; -- &lt;seal&gt;VII. S. d.
-                        &lt;sigillant&gt;Bischofs Ägidius v.
-                        Tortiboli&lt;/sigillant&gt; etwas beschädigt, spitzoval, in Maltha,
-                        III A 2 a. Umschr.: &lt;legend&gt; -- EPI . S . EGIDII DEI ....
-                        TIBVR . &lt;/legend&gt;&lt;/seal&gt; --
-                        &lt;seal&gt;VIII. S. d. &lt;sigillant&gt;Bischofs Perronus
-                        v. Larino&lt;/sigillant&gt; sehr beschädigt, spitzoval, in Maltha.
-                        Umschr.: &lt;legend&gt;. .
+                        (1286-1298)&lt;/sigillant&gt;), III. (&lt;sigillant&gt;Waldebrunus, Bischof
+                        von Vlorá und Glabinitza&lt;/sigillant&gt;), IV. (&lt;sigillant&gt;Leo,
+                        Bischof von Calamon&lt;/sigillant&gt;), V. (&lt;sigillant&gt;Thomas, Bischof
+                        von Acerra&lt;/sigillant&gt;) Siegel von Seidenschnüren
+                        abgerissen.&lt;/seal&gt; -- &lt;seal&gt;VI. S. des &lt;sigillant&gt;Bischofs
+                        Leotherius von Veroli&lt;/sigillant&gt; an Seidenschnur beschädigt, in
+                        Maltha, spitzoval. Umschr.: &lt;legend&gt;S. L RVL ....&lt;/legend&gt; Auf
+                        der Rückseite das Signet undeutlich.&lt;/seal&gt; -- &lt;seal&gt;VII. S. d.
+                        &lt;sigillant&gt;Bischofs Ägidius v. Tortiboli&lt;/sigillant&gt; etwas
+                        beschädigt, spitzoval, in Maltha, III A 2 a. Umschr.: &lt;legend&gt; -- EPI
+                        . S . EGIDII DEI .... TIBVR . &lt;/legend&gt;&lt;/seal&gt; --
+                        &lt;seal&gt;VIII. S. d. &lt;sigillant&gt;Bischofs Perronus v.
+                        Larino&lt;/sigillant&gt; sehr beschädigt, spitzoval, in Maltha. Umschr.:
+                        &lt;legend&gt;. .
                         PERRONI&lt;/legend&gt;&lt;/seal&gt;&lt;/auth&gt;</xs:documentation>
                     </xs:annotation>
                     <xs:complexType mixed="true">
@@ -775,20 +818,18 @@
                               <xs:documentation xml:lang="en">describes the approximate size of the
                                 electronic text as stored on some carrier medium, specified in any
                                 convenient units. In Context of document description the
-                                &lt;extent&gt; element is principally a specification of the
-                                number of leaves or bifolia a document contains, but may also
-                                contain any number of other measurements carried out on the
-                                document. Such measurements may be specifically marked using the
-                                phrase level &lt;dimensions&gt; element, as in the following
-                                example, or left as plain prose. Since the
-                                &lt;dimensions&gt; element is available for use anywhere in
-                                a description, the cataloguer may choose to discuss (for example)
-                                dimensions of miniatures at the same time as describing the
-                                miniatures, rather than specify that information within the
-                                &lt;extent&gt; element. ==Example== &lt;extent&gt;2
-                                leaves, taken from the binding of a printed
-                                book&lt;/extent&gt; &lt;extent&gt;ii+321
-                                leaves&lt;/extent&gt; &lt;extent&gt;37+212
+                                &lt;extent&gt; element is principally a specification of the number
+                                of leaves or bifolia a document contains, but may also contain any
+                                number of other measurements carried out on the document. Such
+                                measurements may be specifically marked using the phrase level
+                                &lt;dimensions&gt; element, as in the following example, or left as
+                                plain prose. Since the &lt;dimensions&gt; element is available for
+                                use anywhere in a description, the cataloguer may choose to discuss
+                                (for example) dimensions of miniatures at the same time as
+                                describing the miniatures, rather than specify that information
+                                within the &lt;extent&gt; element. ==Example== &lt;extent&gt;2
+                                leaves, taken from the binding of a printed book&lt;/extent&gt;
+                                &lt;extent&gt;ii+321 leaves&lt;/extent&gt; &lt;extent&gt;37+212
                                 leaves&lt;/extent&gt;</xs:documentation>
                             </xs:annotation>
                             <xs:complexType mixed="true">
@@ -811,41 +852,31 @@
                   <xs:element name="auth">
                     <xs:annotation>
                       <xs:documentation xml:lang="en">describes the authentification of the
-                        document. ==Example== &lt;auth&gt; &lt;p&gt;The charters
-                        bears no trace of the announced seal.&lt;/p&gt;
-                        &lt;/auth&gt; ... &lt;auth&gt; &lt;seal
+                        document. ==Example== &lt;auth&gt; &lt;p&gt;The charters bears no trace of
+                        the announced seal.&lt;/p&gt; &lt;/auth&gt; ... &lt;auth&gt; &lt;seal
                         n="1"&gt;1: Siegel des Friedrich von Hohenberg, rotes Wachs, stark
-                        beschädigt, &lt;legend&gt;Fridericus
-                        [.......]&lt;/legend&gt;&lt;/seal&gt; &lt;seal
-                        n="2"&gt;2: Siegel des Kloster S. Maria, verloren, nur noch Pressel
-                        vorhanden&lt;/seal&gt; or &lt;physDesc&gt;
-                        &lt;material&gt;parchment, 10x12 inch&lt;/material&gt;
-                        &lt;/physDesc&gt; &lt;auth&gt;&lt;seal&gt;I
+                        beschädigt, &lt;legend&gt;Fridericus [.......]&lt;/legend&gt;&lt;/seal&gt;
+                        &lt;seal n="2"&gt;2: Siegel des Kloster S. Maria, verloren, nur noch Pressel
+                        vorhanden&lt;/seal&gt; or &lt;physDesc&gt; &lt;material&gt;parchment, 10x12
+                        inch&lt;/material&gt; &lt;/physDesc&gt; &lt;auth&gt;&lt;seal&gt;I
                         (&lt;sigillant&gt;Raimund de Mevolhon, Bischof von Gap
-                        (1282-1289)&lt;/sigillant&gt;), II.
-                        (&lt;sigillant&gt;Romanus, Bischof von Epirus
-                        (1286-1298)&lt;/sigillant&gt;), III.
-                        (&lt;sigillant&gt;Waldebrunus, Bischof von Vloré und
-                        Glabinitza&lt;/sigillant&gt;), IV. (&lt;sigillant&gt;Leo,
-                        Bischof von Calamon&lt;/sigillant&gt;), V.
-                        (&lt;sigillant&gt;Thomas, Bischof von
-                        Acerra&lt;/sigillant&gt;) Siegel von Seidenschnüren
-                        abgerissen.&lt;/seal&gt; - &lt;seal&gt;VI. S. des
-                        &lt;sigillant&gt;Bischofs Leotherius von
-                        Veroli&lt;/sigillant&gt; an Seidenschnur beschädigt, in Maltha,
-                        spitzoval. Umschr.: &lt;legend&gt;S. L RVL
-                        ....&lt;/legend&gt; Auf der Rückseite das Signet
-                        undeutlich.&lt;/seal&gt; - &lt;seal&gt;VII. S. d.
-                        &lt;sigillant&gt;Bischofs Ägidius v.
-                        Tortiboli&lt;/sigillant&gt; etwas beschädigt, spitzoval, in Maltha,
-                        III A 2 a. Umschr.: &lt;legend&gt;+ EPI . S . EGIDII DEI .... TIBVR
-                        . &lt;/legend&gt;&lt;/seal&gt; - &lt;seal&gt;VIII.
-                        S. d. &lt;sigillant&gt;Bischofs Perronus v.
-                        Larino&lt;/sigillant&gt; sehr beschädigt, spitzoval, in Maltha.
-                        Umschr.: &lt;legend&gt;. .
-                        PERRONI&lt;/legend&gt;&lt;/seal&gt;&lt;/auth&gt;
-                        &lt;auth&gt; &lt;sigillum&gt;...&lt;/sigillum&gt;
-                        &lt;/auth&gt;</xs:documentation>
+                        (1282-1289)&lt;/sigillant&gt;), II. (&lt;sigillant&gt;Romanus, Bischof von
+                        Epirus (1286-1298)&lt;/sigillant&gt;), III. (&lt;sigillant&gt;Waldebrunus,
+                        Bischof von Vloré und Glabinitza&lt;/sigillant&gt;), IV.
+                        (&lt;sigillant&gt;Leo, Bischof von Calamon&lt;/sigillant&gt;), V.
+                        (&lt;sigillant&gt;Thomas, Bischof von Acerra&lt;/sigillant&gt;) Siegel von
+                        Seidenschnüren abgerissen.&lt;/seal&gt; - &lt;seal&gt;VI. S. des
+                        &lt;sigillant&gt;Bischofs Leotherius von Veroli&lt;/sigillant&gt; an
+                        Seidenschnur beschädigt, in Maltha, spitzoval. Umschr.: &lt;legend&gt;S. L
+                        RVL ....&lt;/legend&gt; Auf der Rückseite das Signet
+                        undeutlich.&lt;/seal&gt; - &lt;seal&gt;VII. S. d. &lt;sigillant&gt;Bischofs
+                        Ägidius v. Tortiboli&lt;/sigillant&gt; etwas beschädigt, spitzoval, in
+                        Maltha, III A 2 a. Umschr.: &lt;legend&gt;+ EPI . S . EGIDII DEI .... TIBVR
+                        . &lt;/legend&gt;&lt;/seal&gt; - &lt;seal&gt;VIII. S. d.
+                        &lt;sigillant&gt;Bischofs Perronus v. Larino&lt;/sigillant&gt; sehr
+                        beschädigt, spitzoval, in Maltha. Umschr.: &lt;legend&gt;. .
+                        PERRONI&lt;/legend&gt;&lt;/seal&gt;&lt;/auth&gt; &lt;auth&gt;
+                        &lt;sigillum&gt;...&lt;/sigillum&gt; &lt;/auth&gt;</xs:documentation>
 
                     </xs:annotation>
                     <xs:complexType mixed="true">
@@ -932,8 +963,8 @@
         the document. They are usually placed in margin, under the seal or on the back of the
         document and contain notes on the elaboration, its means of authentication or its
         registration by the issuing chancery. It does not include notes added by the recipient or
-        the holding archives. ==Example== &lt;nota type="iussio" resp="issuer"&gt;per
-        mandatum domini nostri imperatoris in consilio&lt;/nota&gt; &lt;nota type=""
+        the holding archives. ==Example== &lt;nota type="iussio" resp="issuer"&gt;per mandatum
+        domini nostri imperatoris in consilio&lt;/nota&gt; &lt;nota type=""
         resp="adressee"&gt;...&lt;/nota&gt;</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
@@ -1008,25 +1039,21 @@
     <xs:annotation>
       <xs:documentation xml:lang="de">eine differenzierte Siegelbeschreibung</xs:documentation>
       <xs:documentation xml:lang="en">Marks the place of a the seal in a text or describes a single
-        seal in a list of seals (sealDesc) ==Example== &lt;physDesc&gt;
-        &lt;material&gt;parchment, 10x12 inch&lt;/material&gt;
-        &lt;/physDesc&gt; &lt;auth&gt;&lt;seal&gt;I
-        (&lt;sigillant&gt;Raimund de Mevolhon, Bischof von Gap
-        (1282-1289)&lt;/sigillant&gt;), II. (&lt;sigillant&gt;Romanus, Bischof von
-        Epirus (1286-1298)&lt;/sigillant&gt;), III. (&lt;sigillant&gt;Waldebrunus,
-        Bischof von Vlorá und Glabinitza&lt;/sigillant&gt;), IV.
-        (&lt;sigillant&gt;Leo, Bischof von Calamon&lt;/sigillant&gt;), V.
-        (&lt;sigillant&gt;Thomas, Bischof von Acerra&lt;/sigillant&gt;) Siegel von
-        Seidenschnürenabgerissen.&lt;/seal&gt; -- &lt;seal&gt;VI. S. des
-        &lt;sigillant&gt;Bischofs Leotherius von Veroli&lt;/sigillant&gt; an
+        seal in a list of seals (sealDesc) ==Example== &lt;physDesc&gt; &lt;material&gt;parchment,
+        10x12 inch&lt;/material&gt; &lt;/physDesc&gt; &lt;auth&gt;&lt;seal&gt;I
+        (&lt;sigillant&gt;Raimund de Mevolhon, Bischof von Gap (1282-1289)&lt;/sigillant&gt;), II.
+        (&lt;sigillant&gt;Romanus, Bischof von Epirus (1286-1298)&lt;/sigillant&gt;), III.
+        (&lt;sigillant&gt;Waldebrunus, Bischof von Vlorá und Glabinitza&lt;/sigillant&gt;), IV.
+        (&lt;sigillant&gt;Leo, Bischof von Calamon&lt;/sigillant&gt;), V. (&lt;sigillant&gt;Thomas,
+        Bischof von Acerra&lt;/sigillant&gt;) Siegel von Seidenschnürenabgerissen.&lt;/seal&gt; --
+        &lt;seal&gt;VI. S. des &lt;sigillant&gt;Bischofs Leotherius von Veroli&lt;/sigillant&gt; an
         Seidenschnur beschädigt, in Maltha, spitzoval. Umschr.: &lt;legend&gt;S. L RVL
         ....&lt;/legend&gt; Auf der Rückseite das Signet undeutlich.&lt;/seal&gt; --
-        &lt;seal&gt;VII. S. d. &lt;sigillant&gt;Bischofs Ägidius v.
-        Tortiboli&lt;/sigillant&gt; etwas beschädigt, spitzoval, in Maltha, III A 2 a.
-        Umschr.: &lt;legend&gt; -- EPI . S . EGIDII DEI .... TIBVR .
-        &lt;/legend&gt;&lt;/seal&gt; -- &lt;seal&gt;VIII. S. d.
-        &lt;sigillant&gt;Bischofs Perronus v. Larino&lt;/sigillant&gt; sehr
-        beschädigt, spitzoval, in Maltha. Umschr.: &lt;legend&gt;. .
+        &lt;seal&gt;VII. S. d. &lt;sigillant&gt;Bischofs Ägidius v. Tortiboli&lt;/sigillant&gt;
+        etwas beschädigt, spitzoval, in Maltha, III A 2 a. Umschr.: &lt;legend&gt; -- EPI . S .
+        EGIDII DEI .... TIBVR . &lt;/legend&gt;&lt;/seal&gt; -- &lt;seal&gt;VIII. S. d.
+        &lt;sigillant&gt;Bischofs Perronus v. Larino&lt;/sigillant&gt; sehr beschädigt, spitzoval,
+        in Maltha. Umschr.: &lt;legend&gt;. .
         PERRONI&lt;/legend&gt;&lt;/seal&gt;&lt;/auth&gt;</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
@@ -1055,8 +1082,10 @@
           <xs:group ref="biblArch"/>
           <xs:element name="counterseal" maxOccurs="1" minOccurs="0">
             <xs:annotation>
-              <xs:documentation xml:lang="de">eine von der Vorderseite unabhängiger Siegelabdruck auf der Rückseite des Siegels</xs:documentation>
-              <xs:documentation xml:lang="en">describes a seal place on the back of another seal of which it is independent</xs:documentation>
+              <xs:documentation xml:lang="de">eine von der Vorderseite unabhängiger Siegelabdruck
+                auf der Rückseite des Siegels</xs:documentation>
+              <xs:documentation xml:lang="en">describes a seal place on the back of another seal of
+                which it is independent</xs:documentation>
             </xs:annotation>
             <xs:complexType mixed="true">
               <xs:sequence>
@@ -1092,7 +1121,8 @@
           </xs:element>
           <xs:element minOccurs="0" maxOccurs="1" name="shape">
             <xs:annotation>
-              <xs:documentation xml:lang="en">describes the shape of the seal in plane prose</xs:documentation>
+              <xs:documentation xml:lang="en">describes the shape of the seal in plane
+                prose</xs:documentation>
             </xs:annotation>
             <xs:complexType mixed="false">
               <xs:attributeGroup ref="standard"/>
@@ -1100,7 +1130,8 @@
           </xs:element>
           <xs:element name="ties" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Describes the method and the material how the seal is attached to the charter</xs:documentation>
+              <xs:documentation xml:lang="en">Describes the method and the material how the seal is
+                attached to the charter</xs:documentation>
             </xs:annotation>
             <xs:complexType>
               <xs:attributeGroup ref="standard"/>
@@ -1187,32 +1218,31 @@
       <xs:documentation xml:lang="en">contains a note or annotation. The attribute place indicates
         where the note appears in the source text. (e.g. @place="foot" for footnotes A note is any
         additional comment found in a text, marked in some way as being out of the main textual
-        stream. All notes should be marked using the same tag, &lt;note&gt;, whether they
-        appear as block notes in the main text area, at the foot of the page, at the end of the
-        chapter or volume, in the margin, or in some other place. Notes may be in a different hand
-        or typeface, may be authorial or editorial, and may have been added later. Attributes may be
-        used to specify these and other characteristics of notes, as detailed below. Where possible,
-        the body of a note should be inserted in the text at the point at which its identifier or
-        mark first appears. This may not be possible for example with marginal notes, which may not
-        be anchored to an exact location. For simplicity, it may be adequate to position marginal
-        notes before the relevant paragraph or other element. In some cases, however, it may be
-        desirable to transcribe notes not at their point of attachment to the text but at their
-        point of appearance (at the end of the volume, or the end of the chapter - not, in general,
-        when the notes appear at the foot of the page); in this case the target and targetEnd
-        attributes should be used to specify the point of attachment. In some cases, the note is
-        explicitly attached not to a point but to a span of text; for a full discussion of pointing
-        to points and spans in the text, see section 6.6 Simple Links and Cross References.
-        ==Example== &lt;l&gt;The self-same moment I could pray&lt;/l&gt;
-        &lt;l&gt;And from my neck so free&lt;/l&gt; &lt;l&gt;The albatross
-        fell off, and sank&lt;/l&gt; &lt;l&gt;Like lead into the sea. &lt;note
-        type="auth" place="margin"&gt;The spell begins to break&lt;/note&gt;
-        &lt;/l&gt; Collections are ensembles of distinct entities or objects of any
-        sort.&lt;note n="1" place="foot"&gt;We explain below why we use the uncommon term
+        stream. All notes should be marked using the same tag, &lt;note&gt;, whether they appear as
+        block notes in the main text area, at the foot of the page, at the end of the chapter or
+        volume, in the margin, or in some other place. Notes may be in a different hand or typeface,
+        may be authorial or editorial, and may have been added later. Attributes may be used to
+        specify these and other characteristics of notes, as detailed below. Where possible, the
+        body of a note should be inserted in the text at the point at which its identifier or mark
+        first appears. This may not be possible for example with marginal notes, which may not be
+        anchored to an exact location. For simplicity, it may be adequate to position marginal notes
+        before the relevant paragraph or other element. In some cases, however, it may be desirable
+        to transcribe notes not at their point of attachment to the text but at their point of
+        appearance (at the end of the volume, or the end of the chapter - not, in general, when the
+        notes appear at the foot of the page); in this case the target and targetEnd attributes
+        should be used to specify the point of attachment. In some cases, the note is explicitly
+        attached not to a point but to a span of text; for a full discussion of pointing to points
+        and spans in the text, see section 6.6 Simple Links and Cross References. ==Example==
+        &lt;l&gt;The self-same moment I could pray&lt;/l&gt; &lt;l&gt;And from my neck so
+        free&lt;/l&gt; &lt;l&gt;The albatross fell off, and sank&lt;/l&gt; &lt;l&gt;Like lead into
+        the sea. &lt;note type="auth" place="margin"&gt;The spell begins to break&lt;/note&gt;
+        &lt;/l&gt; Collections are ensembles of distinct entities or objects of any sort.&lt;note
+        n="1" place="foot"&gt;We explain below why we use the uncommon term
         &lt;mentioned&gt;collection&lt;/mentioned&gt; instead of the expected
         &lt;mentioned&gt;set&lt;/mentioned&gt;. Our usage corresponds to the
-        &lt;mentioned&gt;aggregate&lt;/mentioned&gt; of many mathematical writings
-        and to the sense of &lt;mentioned&gt;class&lt;/mentioned&gt; found in older
-        logical writings.&lt;/note&gt; The elements ...</xs:documentation>
+        &lt;mentioned&gt;aggregate&lt;/mentioned&gt; of many mathematical writings and to the sense
+        of &lt;mentioned&gt;class&lt;/mentioned&gt; found in older logical writings.&lt;/note&gt;
+        The elements ...</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
       <xs:sequence>
@@ -1279,12 +1309,10 @@
   </xs:element>
   <xs:element name="decoDesc">
     <xs:annotation>
-      <xs:documentation xml:lang="en">
-        The decoration description contains a prose description of any decoration or illumination on the manuscript as a sequence of paragraphs
-      </xs:documentation>
-      <xs:documentation xml:lang="de">
-        Das Element (decoration description) beschreibt graphische Elemente und Bilder der Urkunde.   
-      </xs:documentation>
+      <xs:documentation xml:lang="en"> The decoration description contains a prose description of
+        any decoration or illumination on the manuscript as a sequence of paragraphs </xs:documentation>
+      <xs:documentation xml:lang="de"> Das Element (decoration description) beschreibt graphische
+        Elemente und Bilder der Urkunde. </xs:documentation>
     </xs:annotation>
     <xs:complexType>
       <xs:sequence>
@@ -1312,8 +1340,7 @@
         <xs:element name="adressee">
           <xs:annotation>
             <xs:documentation xml:lang="en">The person to who the document is adressed if different
-              from the person who receives the document
-              (&lt;recipient&gt;).</xs:documentation>
+              from the person who receives the document (&lt;recipient&gt;).</xs:documentation>
           </xs:annotation>
           <xs:complexType mixed="true">
             <xs:sequence>
@@ -1457,10 +1484,10 @@
   </xs:element>
   <xs:element name="notarius">
     <xs:annotation>
-      <xs:documentation xml:lang="de">eine Textpassage, die einen Notar 
-        beschreibt, d.h. eine Person, die für Richtigkeit des Rechtsinhalts bürgt.</xs:documentation>
-      <xs:documentation xml:lang="en">identifcation of the notary, i.e. the person authenticating the legal content of
-        the charter</xs:documentation>
+      <xs:documentation xml:lang="de">eine Textpassage, die einen Notar beschreibt, d.h. eine
+        Person, die für Richtigkeit des Rechtsinhalts bürgt.</xs:documentation>
+      <xs:documentation xml:lang="en">identifcation of the notary, i.e. the person authenticating
+        the legal content of the charter</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
       <xs:sequence>
@@ -1616,8 +1643,8 @@
       <xs:documentation xml:lang="en">marks the part of a document containing the adressee ((Lat.
         inscription, persona salutata)), i.e. the part in the protocol that states name and
         eventually titles or rank of the person or persons to which the document is adressed,
-        benefiting from the legal act as well as purely informed about its
-        content. (Cfr. VID n. 192)</xs:documentation>
+        benefiting from the legal act as well as purely informed about its content. (Cfr. VID n.
+        192)</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
       <xs:sequence>
@@ -1750,8 +1777,8 @@
       <xs:documentation xml:lang="de">Unterschriftsbestandteile, wie echte Unterschriftszeilen,
         Signumzeilen, Gegenzeichnungen durch Kanzleimitarbeiter usw.</xs:documentation>
       <xs:documentation xml:lang="en">contains the text of any kind of subscription (autograph,
-        non-autograph, notarial subscriptions including the signs as monograms), which contribute to the authentication of the document)
-        etc.</xs:documentation>
+        non-autograph, notarial subscriptions including the signs as monograms), which contribute to
+        the authentication of the document) etc.</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
       <xs:sequence>
@@ -2252,8 +2279,13 @@
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element minOccurs="0" ref="author"/>
         <xs:element minOccurs="0" ref="title"/>
-        <xs:element minOccurs="0" ref="imprint"> </xs:element>
-        <xs:element minOccurs="0" ref="refNum"/>
+        <xs:element minOccurs="0" ref="imprint"/>
+        <xs:element minOccurs="0" ref="refNum">
+          <xs:annotation>
+            <xs:documentation>Deprecated: to be replaced by the element "idno"</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" ref="idno"/>
         <xs:element ref="scope"/>
       </xs:choice>
     </xs:sequence>
@@ -2293,11 +2325,9 @@
         Archiv</xs:documentation>
       <xs:documentation xml:lang="en">the identification of an archival object, usually build from
         the name of the archive, the archival fonds and the identification code of the record within
-        the fonds. ==Example== &lt;archIdentifier&gt;
-        &lt;settlement&gt;München&lt;/settlement&gt; &lt;arch&gt;Bayerisches
-        Hauptstaatsarchiv&lt;/arch&gt; &lt;archFond&gt;HU
-        Passau&lt;/arch&gt; &lt;idno&gt;3&lt;/idno&gt;
-        &lt;/archIdentifier&gt;</xs:documentation>
+        the fonds. ==Example== &lt;archIdentifier&gt; &lt;settlement&gt;München&lt;/settlement&gt;
+        &lt;arch&gt;Bayerisches Hauptstaatsarchiv&lt;/arch&gt; &lt;archFond&gt;HU
+        Passau&lt;/arch&gt; &lt;idno&gt;3&lt;/idno&gt; &lt;/archIdentifier&gt;</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
       <xs:sequence>
@@ -2388,22 +2418,16 @@
         Element auch für kanonische Angaben (wie z.B. Bibelzitate) verwendet werden kann, oder ob
         dafür ein eigenes Element notwendig ist. [strict!] [Liste]</xs:documentation>
       <xs:documentation xml:lang="en"> bibliographic citation of which the sub-components may or may
-        not be explicitly tagged. ==Example== &lt;bibl&gt;Blain, Clements and Grundy:
-        Feminist Companion to Literature in English (Yale, 1990)&lt;/bibl&gt;
-        &lt;bibl&gt; &lt;title level="a"&gt;The Interesting story of the Children in
-        the Wood&lt;/title&gt;. In &lt;author&gt;Victor E
-        Neuberg&lt;/author&gt;, &lt;title&gt;The Penny
-        Histories&lt;/title&gt;. &lt;publisher&gt;OUP&lt;/publisher&gt;
-        &lt;date value="1968"&gt;1968&lt;/date&gt;.
-        &lt;/bibl&gt;</xs:documentation>
+        not be explicitly tagged. ==Example== &lt;bibl&gt;Blain, Clements and Grundy: Feminist
+        Companion to Literature in English (Yale, 1990)&lt;/bibl&gt; &lt;bibl&gt; &lt;title
+        level="a"&gt;The Interesting story of the Children in the Wood&lt;/title&gt;. In
+        &lt;author&gt;Victor E Neuberg&lt;/author&gt;, &lt;title&gt;The Penny
+        Histories&lt;/title&gt;. &lt;publisher&gt;OUP&lt;/publisher&gt; &lt;date
+        value="1968"&gt;1968&lt;/date&gt;. &lt;/bibl&gt;</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
       <xs:choice>
-        <xs:sequence>
-          <xs:element minOccurs="0" ref="author"/>
-          <xs:element minOccurs="0" ref="title"/>
-          <xs:element minOccurs="0" ref="imprint"/>
-        </xs:sequence>
+        <xs:group ref="bibliographicInformation"/>
         <xs:choice minOccurs="0" maxOccurs="unbounded">
           <xs:element ref="foreign"/>
           <xs:element ref="quote"/>
@@ -2426,9 +2450,8 @@
   <xs:element name="imprint">
     <xs:annotation>
       <xs:documentation xml:lang="en">groups information relating to the publication or distribution
-        of a bibliographic item. ==Example== &lt;imprint&gt;
-        &lt;pubPlace&gt;Oxford&lt;/pubPlace&gt; &lt;publisher&gt;Clarendon
-        Press&lt;/publisher&gt; &lt;date&gt;1987&lt;/date&gt;
+        of a bibliographic item. ==Example== &lt;imprint&gt; &lt;pubPlace&gt;Oxford&lt;/pubPlace&gt;
+        &lt;publisher&gt;Clarendon Press&lt;/publisher&gt; &lt;date&gt;1987&lt;/date&gt;
         &lt;/imprint&gt;</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
@@ -2437,6 +2460,7 @@
           <xs:element ref="scope"/>
           <xs:element ref="pubPlace"/>
           <xs:group ref="date"/>
+          <xs:element ref="idno"/>
         </xs:choice>
       </xs:sequence>
       <xs:attributeGroup ref="standard"/>
@@ -2506,9 +2530,8 @@
       <xs:documentation xml:lang="en">Name of the institution (archives or library) holding the
         document or its copy ==Example== &lt;archStruct&gt;
         &lt;settlement&gt;München&lt;/settlement&gt; &lt;arch&gt;Bayerisches
-        Hauptstaatsarchiv&lt;/arch&gt; &lt;archFond&gt;HU
-        Passau&lt;/arch&gt; &lt;idno&gt;3&lt;/idno&gt;
-        &lt;/archStruct&gt; </xs:documentation>
+        Hauptstaatsarchiv&lt;/arch&gt; &lt;archFond&gt;HU Passau&lt;/arch&gt;
+        &lt;idno&gt;3&lt;/idno&gt; &lt;/archStruct&gt; </xs:documentation>
     </xs:annotation>
     <xs:complexType>
       <xs:simpleContent>
@@ -2526,11 +2549,9 @@
       <xs:documentation xml:lang="de">Ein Bestand in einem Archiv, d.h. gewöhnlich eine Gruppe von
         Archivgut, das in einem Provenienzzusammenhang steht.</xs:documentation>
       <xs:documentation xml:lang="en">the archival fonds in which the document belongs or is placed
-        ==Example== &lt;archStruct&gt;
-        &lt;settlement&gt;München&lt;/settlement&gt; &lt;arch&gt;Bayerisches
-        Hauptstaatsarchiv&lt;/arch&gt; &lt;archFond&gt;HU
-        Passau&lt;/arch&gt; &lt;idno&gt;3&lt;/idno&gt;
-        &lt;/archStruct&gt;</xs:documentation>
+        ==Example== &lt;archStruct&gt; &lt;settlement&gt;München&lt;/settlement&gt;
+        &lt;arch&gt;Bayerisches Hauptstaatsarchiv&lt;/arch&gt; &lt;archFond&gt;HU
+        Passau&lt;/arch&gt; &lt;idno&gt;3&lt;/idno&gt; &lt;/archStruct&gt;</xs:documentation>
     </xs:annotation>
     <xs:complexType>
       <xs:simpleContent>
@@ -2628,18 +2649,18 @@
   </xs:group>
   <xs:element name="index">
     <xs:annotation>
-      <xs:documentation xml:lang="en"> * &lt;index&gt; marks a location to be indexed for
-        whatever purpose. level1 (first-level index entry) gives the form under which the index
-        entry is to be made. level2 (second-level index entry) gives the second-level form, if any.
-        level3 (third-level index entry) gives the third-level form, if any. level4 (fourth-level
-        index entry) gives the fourth-level form, if any. index (index number) indicates which index
-        (of several) the index entry belongs to. The tag &lt;index&gt; associates up to four
-        levels of index terms with a specific point in the text. The index terms are supplied in
-        attributes named level1, level2, level3, and level4. An index attribute associates the entry
-        with a particular index, so multiple indices are possible. All index terms must be supplied
-        as attribute values; no part of the text itself is taken as a term. This may require words
-        or phrases to be repeated, as illustrated below; it also allows spelling to be normalized,
-        as the example show. ==Example== The students understand procedures for Arabic lemmatisation
+      <xs:documentation xml:lang="en"> * &lt;index&gt; marks a location to be indexed for whatever
+        purpose. level1 (first-level index entry) gives the form under which the index entry is to
+        be made. level2 (second-level index entry) gives the second-level form, if any. level3
+        (third-level index entry) gives the third-level form, if any. level4 (fourth-level index
+        entry) gives the fourth-level form, if any. index (index number) indicates which index (of
+        several) the index entry belongs to. The tag &lt;index&gt; associates up to four levels of
+        index terms with a specific point in the text. The index terms are supplied in attributes
+        named level1, level2, level3, and level4. An index attribute associates the entry with a
+        particular index, so multiple indices are possible. All index terms must be supplied as
+        attribute values; no part of the text itself is taken as a term. This may require words or
+        phrases to be repeated, as illustrated below; it also allows spelling to be normalized, as
+        the example show. ==Example== The students understand procedures for Arabic lemmatisation
         &lt;index level1="Arabic lemmatization"/&gt;and are beginning to build
         parsers.</xs:documentation>
     </xs:annotation>
@@ -2686,13 +2707,13 @@
         (=Datumsangabe).</xs:documentation>
       <xs:documentation xml:lang="en">contains a date in any format. any date written on the
         document (by the issuer, by the recipient, by an archivist or by anybody else) or given by
-        the editor. While used as direct child of &lt;chDesc&gt; it is understood as the
-        date of issuing the charter as it is seen be the editor. ==Example== &lt;date
-        value="1980-02" certainty="approx"&gt;early February 1980&lt;/date&gt; Given on
-        the &lt;date value="1977-06-12"&gt;Twelfth Day of June in the Year of Our Lord One
-        Thousand Nine Hundred and Seventy-seven of the Republic the Two Hundredth and first and of
-        the University the Eighty-Sixth.&lt;/date&gt; &lt;date
-        value="1990-09"&gt;September 1990&lt;/date&gt;</xs:documentation>
+        the editor. While used as direct child of &lt;chDesc&gt; it is understood as the date of
+        issuing the charter as it is seen by the editor. ==Example== &lt;date value="1980-02"
+        certainty="approx"&gt;early February 1980&lt;/date&gt; Given on the &lt;date
+        value="1977-06-12"&gt;Twelfth Day of June in the Year of Our Lord One Thousand Nine Hundred
+        and Seventy-seven of the Republic the Two Hundredth and first and of the University the
+        Eighty-Sixth.&lt;/date&gt; &lt;date value="1990-09"&gt;September
+        1990&lt;/date&gt;</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
       <xs:sequence>
@@ -2715,7 +2736,8 @@
     <xs:annotation>
       <xs:documentation xml:lang="de">Die Angabe eines spezifischen Tages in einem Kalender
         (=Datumsangabe) an dem die Urkunde ausgestellt worden ist.</xs:documentation>
-      <xs:documentation xml:lang="en">contains a date when the document is issued in any format.</xs:documentation>
+      <xs:documentation xml:lang="en">contains a date when the document is issued in any
+        format.</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
       <xs:sequence>
@@ -2724,6 +2746,7 @@
           <xs:group ref="textualElements"/>
           <xs:group ref="reference"/>
           <xs:group ref="layout"/>
+          <xs:group ref="date"/>
         </xs:choice>
       </xs:sequence>
       <xs:attributeGroup ref="standard"/>
@@ -2819,7 +2842,8 @@
   <xs:element name="testisSigilli">
     <xs:annotation>
       <xs:documentation xml:lang="de">Ein Siegelbittzeuge.</xs:documentation>
-      <xs:documentation xml:lang="en">a single witness of the plea to append a seal of a person that doesn't take part in the legal action</xs:documentation>
+      <xs:documentation xml:lang="en">a single witness of the plea to append a seal of a person that
+        doesn't take part in the legal action</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
       <xs:sequence>
@@ -2919,9 +2943,8 @@
         expressed as a hierarchy of geo-political or administrative units as in Rochester, New York;
         Glasgow, Scotland. ==Example== &lt;archStruct&gt;
         &lt;settlement&gt;München&lt;/settlement&gt; &lt;arch&gt;Bayerisches
-        Hauptstaatsarchiv&lt;/arch&gt; &lt;archFond&gt;HU
-        Passau&lt;/arch&gt; &lt;idno&gt;3&lt;/idno&gt;
-        &lt;/archStruct&gt;</xs:documentation>
+        Hauptstaatsarchiv&lt;/arch&gt; &lt;archFond&gt;HU Passau&lt;/arch&gt;
+        &lt;idno&gt;3&lt;/idno&gt; &lt;/archStruct&gt;</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
       <xs:sequence>
@@ -3062,7 +3085,7 @@
         document.</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
-          <xs:group ref="layout"/>
+      <xs:group ref="layout"/>
       <xs:attributeGroup ref="standard"/>
       <xs:attributeGroup ref="reference"/>
     </xs:complexType>
@@ -3107,8 +3130,8 @@
       <xs:documentation xml:lang="de">Seitenwechsel in der Vorlage.</xs:documentation>
       <xs:documentation xml:lang="en">(page break) marks the boundary between one page of a text and
         the next in a standard reference system. The attribute "where" indicates whether the page
-        break is in the source or in the copy. ==Example== &lt;pb n="123" where="print"/&gt;
-        = The page break in a printed chartulary from page 122 to page 123.</xs:documentation>
+        break is in the source or in the copy. ==Example== &lt;pb n="123" where="print"/&gt; = The
+        page break in a printed chartulary from page 122 to page 123.</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
       <xs:attributeGroup ref="standard"/>
@@ -3121,9 +3144,9 @@
         gewählten Zeichensatz dargestellt werden kann. Die Art und Weise der Darstellung und
         Verarbeitung ist in der encodingDesc zu beschreiben.</xs:documentation>
       <xs:documentation xml:lang="en">(character) represents a character. A single character like an
-        punctuation mark should be given as an entity while the &lt;c&gt;-element might be
-        used for marks in printed editions representing figures etc. (e.g. (C.), the three crosses
-        in the MGH-edition) or different letter forms (e.g. long-s)</xs:documentation>
+        punctuation mark should be given as an entity while the &lt;c&gt;-element might be used for
+        marks in printed editions representing figures etc. (e.g. (C.), the three crosses in the
+        MGH-edition) or different letter forms (e.g. long-s)</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
       <xs:attributeGroup ref="standard"/>
@@ -3143,10 +3166,10 @@
         keine rein inhaltliche Funktion haben, z.B. vergrößerte Initialen, gesperrte Texte, Texte
         zwischen Referenzpunkten, Elongata</xs:documentation>
       <xs:documentation xml:lang="en">(highlighted) marks a word or phrase as graphically distinct
-        from the surrounding text, for reasons concerning which no claim is made. ==Example==
-        &lt;hi rend="gothic"&gt;And this Indenture further witnesseth&lt;/hi&gt;
-        that the said &lt;hi rend="italic"&gt;Walter Shandy&lt;/hi&gt;, merchant, in
-        consideration of the said intended marriage ...</xs:documentation>
+        from the surrounding text, for reasons concerning which no claim is made. ==Example== &lt;hi
+        rend="gothic"&gt;And this Indenture further witnesseth&lt;/hi&gt; that the said &lt;hi
+        rend="italic"&gt;Walter Shandy&lt;/hi&gt;, merchant, in consideration of the said intended
+        marriage ...</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
       <xs:sequence>
@@ -3349,25 +3372,21 @@
       <xs:documentation xml:lang="de">Stoff des hier beschriebenen Objekts (z.B. Beschreibstoff,
         Siegelstoff)</xs:documentation>
       <xs:documentation xml:lang="en">describes the material of the writing support ==Example==
-        &lt;physDesc&gt; &lt;material&gt;parchment, 10x12
-        inch&lt;/material&gt; &lt;/physDesc&gt;
-        &lt;auth&gt;&lt;seal&gt;I (&lt;sigillant&gt;Raimund de Mevolhon,
-        Bischof von Gap (1282-1289)&lt;/sigillant&gt;), II.
-        (&lt;sigillant&gt;Romanus, Bischof von Epirus
-        (1286-1298)&lt;/sigillant&gt;), III. (&lt;sigillant&gt;Waldebrunus, Bischof
-        von Vlorá und Glabinitza&lt;/sigillant&gt;), IV. (&lt;sigillant&gt;Leo,
-        Bischof von Calamon&lt;/sigillant&gt;), V. (&lt;sigillant&gt;Thomas, Bischof
-        von Acerra&lt;/sigillant&gt;) Siegel von
-        Seidenschnürenabgerissen.&lt;/seal&gt; -- &lt;seal&gt;VI. S. des
-        &lt;sigillant&gt;Bischofs Leotherius von Veroli&lt;/sigillant&gt; an
+        &lt;physDesc&gt; &lt;material&gt;parchment, 10x12 inch&lt;/material&gt; &lt;/physDesc&gt;
+        &lt;auth&gt;&lt;seal&gt;I (&lt;sigillant&gt;Raimund de Mevolhon, Bischof von Gap
+        (1282-1289)&lt;/sigillant&gt;), II. (&lt;sigillant&gt;Romanus, Bischof von Epirus
+        (1286-1298)&lt;/sigillant&gt;), III. (&lt;sigillant&gt;Waldebrunus, Bischof von Vlorá und
+        Glabinitza&lt;/sigillant&gt;), IV. (&lt;sigillant&gt;Leo, Bischof von
+        Calamon&lt;/sigillant&gt;), V. (&lt;sigillant&gt;Thomas, Bischof von
+        Acerra&lt;/sigillant&gt;) Siegel von Seidenschnürenabgerissen.&lt;/seal&gt; --
+        &lt;seal&gt;VI. S. des &lt;sigillant&gt;Bischofs Leotherius von Veroli&lt;/sigillant&gt; an
         Seidenschnur beschädigt, in Maltha, spitzoval. Umschr.: &lt;legend&gt;S. L RVL
         ....&lt;/legend&gt; Auf der Rückseite das Signet undeutlich.&lt;/seal&gt; --
-        &lt;seal&gt;VII. S. d. &lt;sigillant&gt;Bischofs Ägidius v.
-        Tortiboli&lt;/sigillant&gt; etwas beschädigt, spitzoval, in Maltha, III A 2 a.
-        Umschr.: &lt;legend&gt; -- EPI . S . EGIDII DEI .... TIBVR .
-        &lt;/legend&gt;&lt;/seal&gt; -- &lt;seal&gt;VIII. S. d.
-        &lt;sigillant&gt;Bischofs Perronus v. Larino&lt;/sigillant&gt; sehr
-        beschädigt, spitzoval, in Maltha. Umschr.: &lt;legend&gt;. .
+        &lt;seal&gt;VII. S. d. &lt;sigillant&gt;Bischofs Ägidius v. Tortiboli&lt;/sigillant&gt;
+        etwas beschädigt, spitzoval, in Maltha, III A 2 a. Umschr.: &lt;legend&gt; -- EPI . S .
+        EGIDII DEI .... TIBVR . &lt;/legend&gt;&lt;/seal&gt; -- &lt;seal&gt;VIII. S. d.
+        &lt;sigillant&gt;Bischofs Perronus v. Larino&lt;/sigillant&gt; sehr beschädigt, spitzoval,
+        in Maltha. Umschr.: &lt;legend&gt;. .
         PERRONI&lt;/legend&gt;&lt;/seal&gt;&lt;/auth&gt;</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
@@ -3441,7 +3460,7 @@
           <xs:element ref="head"/>
           <xs:choice maxOccurs="unbounded">
             <xs:element maxOccurs="1" ref="text"/>
-            <xs:element maxOccurs="1" ref="charter" />
+            <xs:element maxOccurs="1" ref="charter"/>
           </xs:choice>
           <xs:element ref="group"/>
         </xs:choice>
@@ -3482,9 +3501,8 @@
   </xs:attributeGroup>
   <xs:attribute name="target" type="xs:anySimpleType">
     <xs:annotation>
-      <xs:documentation xml:lang="en">
-        contains the target of an element that can be interpreted as a pointer (e.g. references, links to taxonomies etc.)
-      </xs:documentation>
+      <xs:documentation xml:lang="en"> contains the target of an element that can be interpreted as
+        a pointer (e.g. references, links to taxonomies etc.) </xs:documentation>
     </xs:annotation>
   </xs:attribute>
   <xs:attribute name="desc" type="xs:anySimpleType"/>
@@ -3578,7 +3596,9 @@
   </xs:attributeGroup>
   <xs:attribute name="sameAs">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Reference to an XML element which represents the same real world thing (e.g. text passage, feature, physical thing) as the current element.</xs:documentation>
+      <xs:documentation xml:lang="en">Reference to an XML element which represents the same real
+        world thing (e.g. text passage, feature, physical thing) as the current
+        element.</xs:documentation>
     </xs:annotation>
   </xs:attribute>
   <xs:attribute name="id" type="xs:anySimpleType">
