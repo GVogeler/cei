@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
   xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
   <xs:element name="cei">
     <xs:annotation>
       <xs:documentation xml:lang="de">Wurzelelement für alle Dokumente, die den Regeln der CEI
@@ -3599,6 +3600,7 @@
   <xs:attribute name="expan" type="xs:anySimpleType"/>
   <xs:attributeGroup name="standard">
     <xs:attribute ref="id"/>
+    <xs:attribute ref="xml:id"/>
     <xs:attribute ref="n"/>
     <xs:attribute ref="rend"/>
     <xs:attribute ref="lang"/>
