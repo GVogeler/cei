@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
   xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+  <!-- This schema is an restricted implementation of the CEI vocabulary defined at 
+  
+  http://www.cei.lmu.de/
+  
+  It is a living document, but document validated against an older version of this document will remain valid with newer.
+  -->
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+    schemaLocation="http://www.w3.org/2001/xml.xsd"/>
   <xs:element name="cei">
     <xs:annotation>
       <xs:documentation xml:lang="de">Wurzelelement für alle Dokumente, die den Regeln der CEI
@@ -9,6 +16,10 @@
       <xs:documentation xml:lang="en">abstract root element</xs:documentation>
       <xs:documentation>Revision History (if not explicit stated all changes by Georg Vogeler)
        
+	2015-08-26: pb@ed added
+	2015-08-24: chDesc/head introduced
+	     bibl/publisher introduced
+	     note@anchored introduced
 	2015-04-02: introduced issuePlace/location/geo 
  	     introduced encodingDesc/geoDecl|p;
 	     introduced issuePlace/place; 
@@ -246,8 +257,9 @@
         <xs:choice>
           <xs:element ref="p"/>
           <xs:element name="geoDecl">
-          <xs:annotation>
-          <xs:documentation xml:lang="en">documents the notation and the datum used for geographic coordinates expressed as content of the geo element elsewhere within the document.</xs:documentation></xs:annotation>
+            <xs:annotation>
+              <xs:documentation xml:lang="en">documents the notation and the datum used for geographic coordinates expressed as content of the geo element elsewhere within the document.</xs:documentation>
+            </xs:annotation>
             <xs:complexType mixed="true">
               <xs:attributeGroup ref="standard"/>
               <xs:attribute name="datum"/>
@@ -409,24 +421,7 @@
             </xs:element>
             <xs:element maxOccurs="unbounded" ref="group"/>
           </xs:choice>
-          <xs:element minOccurs="0" name="back">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Parts of a text as appendices, indices, bibliography
-                etc.</xs:documentation>
-            </xs:annotation>
-            <xs:complexType mixed="true">
-              <xs:sequence>
-                <xs:choice minOccurs="0" maxOccurs="unbounded">
-                  <xs:group ref="textualElements"/>
-                  <xs:group ref="layout"/>
-                  <xs:group ref="content"/>
-                  <xs:group ref="biblArch"/>
-                  <xs:group ref="reference"/>
-                  <xs:group ref="transcription"/>
-                </xs:choice>
-              </xs:sequence>
-            </xs:complexType>
-          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" ref="back"/>
         </xs:sequence>
         <xs:group ref="charter"/>
       </xs:choice>
@@ -435,6 +430,24 @@
       <xs:attribute name="type" use="optional"/>
       <xs:attribute ref="picture" use="optional"/>
       <xs:attribute ref="certainty" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="back">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Parts of a text as appendices, indices, bibliography
+        etc.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="textualElements"/>
+          <xs:group ref="layout"/>
+          <xs:group ref="content"/>
+          <xs:group ref="biblArch"/>
+          <xs:group ref="reference"/>
+          <xs:group ref="transcription"/>
+        </xs:choice>
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="charter">
@@ -592,25 +605,25 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="location">
-  	<xs:annotation>
-		<xs:documentation xml:lang="en">defines the location of a place as a set of geographical coordinates, in terms of other named geo-political entities, or as an address.</xs:documentation>
-  	</xs:annotation>
+    <xs:annotation>
+      <xs:documentation xml:lang="en">defines the location of a place as a set of geographical coordinates, in terms of other named geo-political entities, or as an address.</xs:documentation>
+    </xs:annotation>
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="1">
         <xs:element ref="geo"/>
         <xs:sequence>
-        	<xs:element ref="placeName" minOccurs="0"/>
-        	<xs:element ref="settlement" minOccurs="0"/>
-        	<xs:element ref="country" minOccurs="0"/>
+          <xs:element ref="placeName" minOccurs="0"/>
+          <xs:element ref="settlement" minOccurs="0"/>
+          <xs:element ref="country" minOccurs="0"/>
         </xs:sequence>
       </xs:choice>
       <xs:attributeGroup ref="standard"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="geo">
-  	<xs:annotation>
-  	  <xs:documentation xml:lang="en">contains any expression of a set of geographic coordinates, representing a point, line, or area on the surface of the earth in some notation</xs:documentation>
-  	</xs:annotation>
+    <xs:annotation>
+      <xs:documentation xml:lang="en">contains any expression of a set of geographic coordinates, representing a point, line, or area on the surface of the earth in some notation</xs:documentation>
+    </xs:annotation>
     <xs:complexType mixed="true">
       <xs:attributeGroup ref="standard"/>
       <xs:attribute ref="decls"/>
@@ -967,7 +980,7 @@
   <xs:element name="nota">
     <xs:annotation>
       <xs:documentation xml:lang="de">Enthält Vermerke der ausstellenden Kanzlei auf der Urkunde.
-        Für Archivvermerke beim Empfänger vgl. ###</xs:documentation>
+        Für Archivvermerke beim Empfänger vgl. rubrum</xs:documentation>
       <xs:documentation xml:lang="en">contains the extra sigillum notes on the document (Lat.: extra
         tenorem, parfois extra sigillum), i.e notes on the original or its copies that aren't in
         part of the actual content of document itself although they are part of the elaboration# of
@@ -1283,7 +1296,11 @@
             Fußnote zum Text an: foot/end/margin</xs:documentation>
           <xs:documentation xml:lang="en">gives the position of the note in relation zu the text:
             food, end margin.</xs:documentation>
-
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="anchored" use="optional" default="false">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">is there a fixed reference point in the base text (either at the place of the note or represented by a reference)</xs:documentation>
         </xs:annotation>
       </xs:attribute>
       <xs:attribute name="targetEnd">
@@ -1339,6 +1356,7 @@
       <xs:element minOccurs="0" ref="idno"/>
       <xs:element minOccurs="0" ref="chDesc"/>
       <xs:element minOccurs="0" ref="tenor"/>
+      <xs:element minOccurs="0" ref="back"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="relevantPersonal">
@@ -2470,6 +2488,7 @@
         <xs:choice minOccurs="0" maxOccurs="unbounded">
           <xs:element ref="scope"/>
           <xs:element ref="pubPlace"/>
+          <xs:element ref="publisher"/>
           <xs:group ref="date"/>
           <xs:element ref="idno"/>
         </xs:choice>
@@ -2488,6 +2507,11 @@
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
+  </xs:element>
+  <xs:element name="publisher">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The institution responsible for the publication of the material.</xs:documentation>
+    </xs:annotation>
   </xs:element>
   <xs:element name="pubPlace">
     <xs:annotation>
@@ -3147,6 +3171,7 @@
     <xs:complexType mixed="true">
       <xs:attributeGroup ref="standard"/>
       <xs:attribute ref="where"/>
+      <xs:attribute name="ed" type="xs:anySimpleType"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="c">
@@ -3648,4 +3673,3 @@
     </xs:annotation>
   </xs:attribute>
 </xs:schema>
-
