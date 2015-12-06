@@ -5,7 +5,10 @@
   
   http://www.cei.lmu.de/
   
-  It is a living document, but document validated against an older version of this document will remain valid with newer.
+  It is a living document, but document validated against an older version of this document should remain valid with newer.
+  
+  The recent development of this schema is recorded at https://github.com/GVogeler/cei
+  
   -->
   <xs:import namespace="http://www.w3.org/XML/1998/namespace"
     schemaLocation="http://www.w3.org/2001/xml.xsd"/>
@@ -16,6 +19,7 @@
       <xs:documentation xml:lang="en">abstract root element</xs:documentation>
       <xs:documentation>Revision History (if not explicit stated all changes by Georg Vogeler)
        
+	2015-12-06: unclear added; title allowed in bibl
 	2015-08-26: pb@ed added
 	2015-08-24: chDesc/head introduced
 	     bibl/publisher introduced
@@ -1991,6 +1995,21 @@
             <xs:attribute name="extent" type="xs:anySimpleType"/>
           </xs:complexType>
         </xs:element>
+        <xs:element name="unclear">
+          <xs:annotation>
+            <xs:documentation xml:lang="de">enthält Passagen, die nicht sicher entziffert werden können.</xs:documentation>
+            <xs:documentation xml:lang="en">contains text which cannot be read in a sufficient clear manner.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType mixed="true">
+            <xs:sequence minOccurs="0">
+              <xs:element ref="desc"/>
+            </xs:sequence>
+            <xs:attributeGroup ref="standard"/>
+            <xs:attributeGroup ref="transcription"/>
+            <xs:attribute name="degree" type="xs:anySimpleType"/>
+            <xs:attribute name="extent" type="xs:anySimpleType"/>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="supplied">
           <xs:annotation>
             <xs:documentation xml:lang="de">enthält vom Editor aus beliebigen
@@ -2458,6 +2477,7 @@
       <xs:choice>
         <xs:group ref="bibliographicInformation"/>
         <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="title"/>
           <xs:element ref="foreign"/>
           <xs:element ref="quote"/>
           <xs:element ref="cit"/>
