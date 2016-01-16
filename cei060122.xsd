@@ -19,6 +19,7 @@
       <xs:documentation xml:lang="en">abstract root element</xs:documentation>
       <xs:documentation>Revision History (if not explicit stated all changes by Georg Vogeler)
        
+	2016-01-16: added mixedContent and group:transcription in pict (to allow transcription of textual parts in rotae etc.)
 	2015-12-06: unclear added; title allowed in bibl
 	2015-08-26: pb@ed added
 	2015-08-24: chDesc/head introduced
@@ -2020,7 +2021,13 @@
           </xs:annotation>
           <xs:complexType mixed="true">
             <xs:sequence minOccurs="0">
-              <xs:element ref="desc"/>
+              <xs:choice>
+                <xs:element ref="c"/>
+                <xs:element ref="expan"/>
+                <xs:group ref="reference"/>
+                <xs:group ref="content"/>
+                <xs:element ref="desc"/>
+              </xs:choice>
             </xs:sequence>
             <xs:attributeGroup ref="standard"/>
             <xs:attributeGroup ref="transcription"/>
@@ -2291,7 +2298,8 @@
         (Chrismon), crosses prefixed to subscriptions, symbols etc. Notarial signs are marked as
         &lt;notariusSign></xs:documentation>
     </xs:annotation>
-    <xs:complexType>
+    <xs:complexType mixed="true">
+      <xs:group ref="transcription"/>
       <xs:attributeGroup ref="standard"/>
       <xs:attributeGroup ref="reference"/>
       <xs:attribute name="entity" type="xs:anySimpleType"/>
