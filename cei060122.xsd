@@ -19,7 +19,7 @@
       <xs:documentation xml:lang="en">abstract root element</xs:documentation>
       <xs:documentation>Revision History (if not explicit stated all changes by Georg Vogeler)
        
-	2016-01-16: added mixedContent and group:transcription in pict (to allow transcription of textual parts in rotae etc.); extend quote with all of group:reference
+       2016-01-16: added mixedContent and group:transcription in pict (to allow transcription of textual parts in rotae etc.); extend quote with all of group:reference; unclear extended with @reason, @agent; persName as child of author introduced 
 	2015-12-06: unclear added; title allowed in bibl
 	2015-08-26: pb@ed added
 	2015-08-24: chDesc/head introduced
@@ -2009,6 +2009,8 @@
             <xs:attributeGroup ref="transcription"/>
             <xs:attribute name="degree" type="xs:anySimpleType"/>
             <xs:attribute name="extent" type="xs:anySimpleType"/>
+            <xs:attribute name="reason" type="xs:anySimpleType"/>
+            <xs:attribute name="agent" type="xs:anySimpleType"/>
           </xs:complexType>
         </xs:element>
         <xs:element name="supplied">
@@ -2352,12 +2354,11 @@
         bibliographischen Angabe gebraucht.</xs:documentation>
       <xs:documentation xml:lang="en">The author of a bibliographic entity</xs:documentation>
     </xs:annotation>
-    <xs:complexType>
-      <xs:simpleContent>
-        <xs:extension base="xs:string">
-          <xs:attributeGroup ref="standard"/>
-        </xs:extension>
-      </xs:simpleContent>
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="persName" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="standard"/>
     </xs:complexType>
   </xs:element>
   <xs:group name="biblArch">
