@@ -19,7 +19,8 @@
       <xs:documentation xml:lang="en">abstract root element</xs:documentation>
       <xs:documentation>Revision History (if not explicit stated all changes by Georg Vogeler)
        
-       2016-01-16: added mixedContent and group:transcription in pict (to allow transcription of textual parts in rotae etc.); extend quote with all of group:reference; unclear extended with @reason, @agent; persName as child of author introduced 
+  2016-01-24: added forename, surname, rolename as part of persName
+  2016-01-16: added mixedContent and group:transcription in pict (to allow transcription of textual parts in rotae etc.); extend quote with all of group:reference; unclear extended with @reason, @agent; persName as child of author introduced 
 	2015-12-06: unclear added; title allowed in bibl
 	2015-08-26: pb@ed added
 	2015-08-24: chDesc/head introduced
@@ -2753,7 +2754,6 @@
           </xs:choice>
           <xs:group ref="transcription"/>
           <xs:group ref="layout"/>
-
           <xs:group ref="content"/>
         </xs:choice>
       </xs:sequence>
@@ -2851,8 +2851,74 @@
       <xs:sequence>
         <xs:choice minOccurs="0" maxOccurs="unbounded">
           <xs:element ref="name"/>
+          <xs:element ref="forename"/>
+          <xs:element ref="surname"/>
+          <xs:element ref="rolename"/>
           <xs:element ref="placeName"/>
           <xs:element ref="persName"/>
+          <xs:element ref="index"/>
+          <xs:group ref="layout"/>
+          <xs:group ref="transcription"/>
+          <xs:group ref="reference"/>
+          <xs:element ref="foreign"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attribute ref="type"/>
+      <xs:attributeGroup ref="standard"/>
+      <xs:attributeGroup ref="name"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="forename">
+    <xs:annotation>
+      <xs:documentation xml:lang="deu">ein Vorname</xs:documentation>
+      <xs:documentation xml:lang="en">The name a person identifying a person in everyday context in particular in family and informal situations</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="index"/>
+          <xs:group ref="layout"/>
+          <xs:group ref="transcription"/>
+          <xs:group ref="reference"/>
+          <xs:element ref="foreign"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attribute ref="type"/>
+      <xs:attributeGroup ref="standard"/>
+      <xs:attributeGroup ref="name"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="surname">
+    <xs:annotation>
+      <xs:documentation xml:lang="deu">ein Familienname oder anderer Beiname, der zur Unterscheidung einer Person z.B. durch Gruppenzuordnung dient.</xs:documentation>
+      <xs:documentation xml:lang="en">A name used to distinguish a person from others with the same forename, inserting the person into a family or similar.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:sequence>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="rolename"/>
+            <xs:element ref="placeName"/>
+            <xs:element ref="index"/>
+            <xs:group ref="layout"/>
+            <xs:group ref="transcription"/>
+            <xs:group ref="reference"/>
+            <xs:element ref="foreign"/>
+          </xs:choice>
+      </xs:sequence>
+      <xs:attribute ref="type"/>
+      <xs:attributeGroup ref="standard"/>
+      <xs:attributeGroup ref="name"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rolename">
+    <xs:annotation>
+      <xs:documentation xml:lang="deu">ein Rollennamen, z.B. Adelstitel, Anrede, Epitheton ...</xs:documentation>
+      <xs:documentation xml:lang="en">A part of a name describing the social role of the person like nobility, epitheta etc.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="placeName"/>
           <xs:element ref="index"/>
           <xs:group ref="layout"/>
           <xs:group ref="transcription"/>
