@@ -18,7 +18,8 @@
         (Charters Encoding Initiative, http://www.cei.lmu.de) folgen.</xs:documentation>
       <xs:documentation xml:lang="en">abstract root element</xs:documentation>
       <xs:documentation>Revision History (if not explicit stated all changes by Georg Vogeler)
-       
+
+  2016-10-11: added indentura as mean of authentication in chirographs/chartae partitae.
   2016-10-08: added rogatio and intercessio as parts of the diplomatic discourse, and rogator and intervenient as relevant personal
   2016-08-02: added incipit as part of diplomaticAnalysis 
   2016-01-24: added forename, surname, rolename as part of persName
@@ -929,6 +930,7 @@
                                   <xs:element ref="notariusSub"/>
                                   <xs:element ref="notariusSign"/>
                                   <xs:element ref="notarius"/>
+                                  <xs:element ref="indentura"/>
                                   <xs:group ref="textualElements"/>
                                   <xs:group ref="layout"/>
                                 </xs:choice>
@@ -1041,6 +1043,21 @@
           <xs:element minOccurs="0" maxOccurs="1" ref="notariusSign"/>
           <xs:element minOccurs="0" maxOccurs="1" ref="notarius"/>
           <xs:element minOccurs="0" maxOccurs="unbounded" ref="persName"/>
+        </xs:choice>
+        <xs:group ref="geography"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="standard"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="indentura">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">Teilurkundenschnitt</xs:documentation>
+      <xs:documentation xml:lang="en">contains a description of the method how a chirograph (cfr. VID 44, http://www.cei.lmu.de/VID/#VID_44) is executed, e.g. the text written in the place of cutting, and/or the form of the cutting.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:choice>
+          <xs:group ref="transcription"/>
         </xs:choice>
         <xs:group ref="geography"/>
       </xs:sequence>
@@ -2421,7 +2438,7 @@
         ausführliche Beschreibungen aufzunehmen.</xs:documentation>
       <xs:documentation xml:lang="en">In transcriptions many observations cannot be described
         completely by existing elements or their attributes. This element gives the opportunity to
-        add complex text to a tagged part of the transcription which could be rendered as a
+        add complex text to a tagged part of the document which could be rendered as a
         footnote.</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
