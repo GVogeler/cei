@@ -533,7 +533,6 @@
                 </xs:choice>
               </xs:sequence>
               <xs:attributeGroup ref="standard"/>
-              <xs:attribute ref="resp"/>
             </xs:complexType>
           </xs:element>
           <xs:group ref="relevantPersonal"/>
@@ -591,7 +590,6 @@
     </xs:annotation>
     <xs:complexType>
       <xs:attribute ref="target"/>
-      <xs:attribute ref="resp"/>
       <xs:attributeGroup ref="standard"/>
     </xs:complexType>
   </xs:element>
@@ -718,7 +716,6 @@
         </xs:choice>
       </xs:sequence>
       <xs:attributeGroup ref="standard"/>
-      <xs:attribute ref="resp"/>
       <xs:attribute name="degree" type="xs:anySimpleType" default="0">
         <xs:annotation>
           <xs:documentation xml:lang="de">Grad der Verunechtung ausgedrückt durch eine numerische
@@ -965,7 +962,6 @@
                       </xs:choice>
                       <xs:attributeGroup ref="standard"/>
                       <xs:attribute ref="type"/>
-                      <xs:attribute ref="resp"/>
                     </xs:complexType>
                   </xs:element>
                 </xs:choice>
@@ -1375,7 +1371,6 @@
       </xs:sequence>
       <xs:attributeGroup ref="standard"/>
       <xs:attribute ref="decls" use="optional"/>
-      <xs:attribute ref="resp" use="optional"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="decoDesc">
@@ -1457,24 +1452,25 @@
         <xs:element ref="rogator"/>
         <xs:element ref="intervenient"/>
         <xs:element ref="sigillant"/>
-        <xs:element name="relevantPersonal">
-          <xs:annotation>
-            <xs:documentation xml:lang="en">groups personal that is relevant for the legal content
-              of the charter as long it isn't extractable from tenor, the abstract or the
-              authentifaction description (&lt;auth>)</xs:documentation>
-          </xs:annotation>
-          <xs:complexType mixed="true">
-            <xs:sequence>
-              <xs:choice minOccurs="0" maxOccurs="unbounded">
-                <xs:group ref="layout"/>
-                <xs:group ref="relevantPersonal"/>
-              </xs:choice>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
+        <xs:element ref="relevantPersonal"/>
       </xs:choice>
     </xs:sequence>
   </xs:group>
+  <xs:element name="relevantPersonal">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">groups personal that is relevant for the legal content
+        of the charter as long it isn't extractable from tenor, the abstract or the
+        authentifaction description (&lt;auth>)</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="layout"/>
+          <xs:group ref="relevantPersonal"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="issuer">
     <xs:annotation>
       <xs:documentation xml:lang="de">Der Aussteller der Urkunde.</xs:documentation>
@@ -2227,7 +2223,6 @@
           </xs:complexType>
         </xs:element>
       </xs:sequence>
-      <xs:attribute ref="resp"/>
       <xs:attributeGroup ref="standard"/>
     </xs:complexType>
   </xs:element>
@@ -2366,7 +2361,6 @@
         <xs:element ref="desc"/>
       </xs:sequence>
       <xs:attributeGroup ref="standard"/>
-      <xs:attribute ref="resp"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="add">
@@ -2389,7 +2383,6 @@
         </xs:choice>
       </xs:sequence>
       <xs:attributeGroup ref="standard"/>
-      <xs:attribute ref="resp"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="reg">
@@ -2409,7 +2402,6 @@
         </xs:choice>
       </xs:sequence>
       <xs:attributeGroup ref="standard"/>
-      <xs:attribute ref="resp"/>
       <xs:attribute name="orig"/>
     </xs:complexType>
   </xs:element>
@@ -2451,7 +2443,6 @@
         </xs:choice>
       </xs:sequence>
       <xs:attributeGroup ref="standard"/>
-      <xs:attribute ref="resp"/>
     </xs:complexType>
   </xs:element>
   <xs:group name="bibliographicInformation">
@@ -3746,7 +3737,6 @@
   </xs:annotation>
   <xs:attributeGroup name="reference">
     <xs:attribute ref="type"/>
-    <xs:attribute ref="resp"/>
     <xs:attribute ref="target"/>
     <xs:attribute ref="key"/>
   </xs:attributeGroup>
@@ -3759,7 +3749,6 @@
   <xs:attribute name="desc" type="xs:anySimpleType"/>
   <xs:attributeGroup name="certain">
     <xs:attribute ref="certainty"/>
-    <xs:attribute ref="resp"/>
   </xs:attributeGroup>
   <xs:attribute name="certainty" type="xs:anySimpleType">
     <xs:annotation>
@@ -3776,7 +3765,6 @@
       </xs:annotation>
     </xs:attribute>
     <xs:attribute ref="certainty"/>
-    <xs:attribute ref="resp"/>
   </xs:attributeGroup>
   <xs:attribute name="reg" type="xs:anySimpleType">
     <xs:annotation>
@@ -3868,7 +3856,6 @@
   <xs:attribute name="lang" type="xs:anySimpleType"/>
   <xs:attribute name="rend" type="xs:anySimpleType"/>
   <xs:attributeGroup name="transcription">
-    <xs:attribute ref="resp"/>
     <xs:attribute ref="type"/>
     <xs:attribute ref="hand"/>
     <xs:attribute ref="certainty"/>

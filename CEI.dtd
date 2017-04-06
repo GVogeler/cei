@@ -1,0 +1,1522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+** Charter Encoding Initiative - Markup for medieval and early modern legal records: charters, deeds, acts, instruments etc.
+** Version 1.0.1 - 2009-04-29
+** A DTD including all names proposed by the CEI for use in charter markup as elements.
+** no hierarchy and order of the elements
+**
+-->
+
+<!-- all element names as entity -->
+
+<!ENTITY % Elemente "issueDate | nota | pictRef | sigillant | testis | legend | archIdentifier | issued | pict | scope | notariusSub | notariusSign | watermark | charter | chDesc | idno | adressee | issuePlace | diplomaticAnalysis | sigil | recipient | abstract | chirograph | archFond | language | prints | remarks | arch | issuer | form | authDesc | studies | script | traditioForm | rubrum | provenance | dateOrig | scribe | facsimiles | sealDesc | regesta | class | elongata | datatio | sanctio | apprecatio | subscriptio | testes | invocatio | protocol | tenor | salutatio | petitio | corroboratio | setPhrase | dispositio | narratio | context | arenga | publicatio | inscriptio | intitulatio | eschatocol | sup | figure | hi | index | resp | ptr | link | availability | projectDesc | respStmt | anchor | span | sourceDesc | listBibl | monogr | head | figDesc | foreign | item | cit | dateRange | list | term | div | body | front | text | back | fileDesc | encodingDesc | profileDesc | ref | notesStmt | note | group | graphic | titleStmt | quote | editionStmt | publicationStmt | seriesStmt | revisionDesc | c | lb | p | pb | cb | app | space | unclear | damage | handShift | handList | hand | restore | delSpan | addSpan | gap | add | sic | rdg | supplied | lem | rdgGrp | witDetail | wit | witList | witness | witStart | witEnd | lacunaStart | lacunaEnd | corr | expan | abbr | del | genName | persName | surname | foreName | roleName | nameLink | name | orgName | orgTitle | orgType | orgDivn | nameSort | addName | date | time | dateStruct | timeStruct | day | week | month | year | second | minute | occasion | dateSort | hour | settlement | region | country | bloc | geogName | geog | offset | distance | placeName | author | bibl | pubPlace | edition | publisher | biblStruct | title | imprint | handDesc | support | extent | collation | layout | msWriting | decoration | bindingDesc | foliation | condition | seal | teiHeader | binding | material | dimensions | decoNote | physicalDesc | additions" >
+
+<!-- root element -->
+<!ELEMENT cei (#PCDATA | %Elemente;)*>
+<!--  Contains: abstract root-element  -->
+
+<!--
+ ##############   Module: CEI   ##############
+ Other CEI-elements
+ -->
+
+<!ELEMENT issueDate (#PCDATA | %Elemente;)*>
+<!--  Contains: contains the date when the charter ist issued in any format.  -->
+	<!ATTLIST issueDate
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		n CDATA #IMPLIED
+		calendar CDATA #IMPLIED
+		value CDATA #IMPLIED
+		certainty CDATA #IMPLIED
+	>
+
+<!ELEMENT nota (#PCDATA | %Elemente;)*>
+<!--  Contains: contains the extra sigillum notes on the document. (cfr. VID n. 180: Les mentions hors teneur (Lat.: extra tenorem, parfois extra sigillum), plac�es sur les originaux sur ou sous le repli des actes, dans les amrges, aupr�s du sceau ou au dos de la pi�ce, et comportant des indications sur l'�laboration de l'acte, sur les formalit�s ne�cessaires � sa validit� ou bien relatives � son entregsitrement ou � son ex�cution (mais distinctes des mentions ult�rieures, notamment d'archivage), ne paticipent pas stricto sensu � la nature m�me de l'acte. On les dit parfois 'mentions de chancellerie')  -->
+	<!ATTLIST nota
+		type CDATA #IMPLIED
+		date CDATA #IMPLIED
+		resp CDATA #IMPLIED
+		place CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT pictRef (#PCDATA | %Elemente;)*>
+<!--  Contains: Reference to an external picture ressource.  -->
+
+<!ELEMENT sigillant (#PCDATA | %Elemente;)*>
+<!--  Contains: the person whose seal to authenticates the charter  -->
+
+<!ELEMENT testis (#PCDATA | %Elemente;)*>
+<!--  Contains: a single witness of the legal action represented by the charter  -->
+
+<!ELEMENT legend (#PCDATA | %Elemente;)*>
+<!--  Contains: text written on a seal  -->
+
+<!ELEMENT archIdentifier (#PCDATA | %Elemente;)*>
+<!--  Contains: the identification of an archival object, usually build from the name of the archive, the archival fonds and the identification code of the record within the fonds.  -->
+	<!ATTLIST archIdentifier
+		id CDATA #IMPLIED
+		n CDATA #IMPLIED
+	>
+
+<!ELEMENT issued (#PCDATA | %Elemente;)*>
+<!--  Contains: a container for date and place of issuing of the charter  -->
+	<!ATTLIST issued
+		id CDATA #IMPLIED
+		n CDATA #IMPLIED
+	>
+
+<!ELEMENT pict (#PCDATA | %Elemente;)*>
+<!--  Contains: pictorial parts of a document, like monogrammatic invocations (Chrismon), crosses prefixed to subscriptions, symbols etc.
+Notarial signs are marked as <notariusSign>  -->
+	<!ATTLIST pict
+		type CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT scope (#PCDATA | %Elemente;)*>
+<!--  Contains: marks a text giving the specific place of an information in an wider entity, like a page in a book or a document, or a range of pages.  -->
+	<!ATTLIST scope
+		type CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		rend CDATA #IMPLIED
+		n CDATA #IMPLIED
+	>
+
+<!ELEMENT notariusSub (#PCDATA | %Elemente;)*>
+<!--  Contains: contains the subscription of a notary. If the notarial sign is in graphical connection with the subscription it can be marked as a part of notariusSub  -->
+	<!ATTLIST notariusSub
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT notariusSign (#PCDATA | %Elemente;)*>
+<!--  Contains: Marks the place of the notarial sign.  -->
+	<!ATTLIST notariusSign
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		rend CDATA #IMPLIED
+		n CDATA #IMPLIED
+	>
+
+<!ELEMENT watermark (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a detailed description of a watermark identified in the paper on which a document is written.  -->
+	<!ATTLIST watermark
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		rend CDATA #IMPLIED
+		n CDATA #IMPLIED
+	>
+
+<!ELEMENT charter (#PCDATA | %Elemente;)*>
+<!--  Contains: containing all informations on one single document  -->
+	<!ATTLIST charter
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		n CDATA #IMPLIED
+	>
+
+<!--
+ ##############   Module: CEI-Meta   ##############
+ Elements for the metadata of a charter
+ -->
+
+<!ELEMENT chDesc (#PCDATA | %Elemente;)*>
+<!--  Contains: marks a description of the document defined by the CID as follows:
+"L'analyse diplomatique (ou simplement analyse) d'un acte est un r&eacute;sum&eacute; de celui-ci, r&eacute;dig&eacute;e sous forme concise, ad&eacute;quate et d&eacute;gageant l'essentiel de son contenu historique et juridique; elle est noamment dress&eacute;e pour &ecirc;tre publi&eacute;e en t&ecirc;te d'une &eacute;dition e l'acte."
+For calendars/regesta with more detailed informations this element can contain detailed informations on the content, but should be augmented by elements describing the physical setting, annotating the content etc.  -->
+	<!ATTLIST chDesc
+		picture CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT idno (#PCDATA | %Elemente;)*>
+<!--  Contains: contains the unique identifier of a document in a body of documents or its locator in the holdings of an archives or a library  -->
+	<!ATTLIST idno
+		type CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT adressee (#PCDATA | %Elemente;)*>
+<!--  Contains: The person to who the document is adressed if different from the person who receives the document (<recipient>)  -->
+	<!ATTLIST adressee
+		reg CDATA #IMPLIED
+	>
+
+<!ELEMENT issuePlace (#PCDATA | %Elemente;)*>
+<!--  Contains: contains the name of the place where the document was issued - usually as expressed in the date - with its modern name.  -->
+	<!ATTLIST issuePlace
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT diplomaticAnalysis (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a diplomatic analysis of the document, the formal criticism of its form and content.  -->
+	<!ATTLIST diplomaticAnalysis
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT sigil (#PCDATA | %Elemente;)*>
+<!--  Contains: the abbreviation used for a document or textual witness defined in the witnesslist and refered to in the wit element in the apparatus  -->
+
+<!ELEMENT recipient (#PCDATA | %Elemente;)*>
+<!--  Contains: The name of the person who is rmeant to eceives the document.  -->
+	<!ATTLIST recipient
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		reg CDATA #IMPLIED
+	>
+
+<!ELEMENT abstract (#PCDATA | %Elemente;)*>
+<!--  Contains: contains the text of the abstract/summary of the document as a head before an edited text or as a single part of calendar/regesta collection (like RI)  -->
+	<!ATTLIST abstract
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT chirograph (#PCDATA | %Elemente;)*>
+<!--  Contains: description of the text cut in two parts in a chirograph  -->
+	<!ATTLIST chirograph
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT archFond (#PCDATA | %Elemente;)*>
+<!--  Contains: the archival fonds in which the document belongs or is placed  -->
+	<!ATTLIST archFond
+		expan CDATA #IMPLIED
+		abbr CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT language (#PCDATA | %Elemente;)*>
+<!--  Contains: (main-)language of the document  -->
+	<!ATTLIST language
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT prints (#PCDATA | %Elemente;)*>
+<!--  Contains: lists existing prints of the document  -->
+	<!ATTLIST prints
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT remarks (#PCDATA | %Elemente;)*>
+<!--  Contains: contains any remark and comment not classified# in other elements.  -->
+	<!ATTLIST remarks
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT arch (#PCDATA | %Elemente;)*>
+<!--  Contains: Name of the institution (archives or library) holding the document or its copy  -->
+	<!ATTLIST arch
+		expan CDATA #IMPLIED
+		abbr CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT issuer (#PCDATA | %Elemente;)*>
+<!--  Contains: marks a person the CID describes as follows:
+L'auteur d'un acte &eacute;crit est la personne au nom de qui cet acte est intitul&eacute;.  -->
+	<!ATTLIST issuer
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		reg CDATA #IMPLIED
+	>
+
+<!ELEMENT form (#PCDATA | %Elemente;)*>
+<!--  Contains: contains the physical form of the document, i.e. single sheet, libellum, rotulus ...  -->
+
+<!ELEMENT authDesc (#PCDATA | %Elemente;)*>
+<!--  Contains: describes the type of authentification used on the document.  -->
+	<!ATTLIST authDesc
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT studies (#PCDATA | %Elemente;)*>
+<!--  Contains: lists scholarly studies using or dealing in any way with the document  -->
+	<!ATTLIST studies
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT script (#PCDATA | %Elemente;)*>
+<!--  Contains: gives the paleographic name for the script used in the document  -->
+	<!ATTLIST script
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT traditioForm (#PCDATA | %Elemente;)*>
+<!--  Contains: names the type of textual transmission, e.g. original, copy, extract etc.
+contains the information on the textual 'tradition' of the document described by the CID as follows:
+La tradition des actes est la cha&icirc;ne des &eacute;tats d'un *document, entre le texte tel qu'il a &eacute;t&eacute; voulu par son auteur et mis par &eacute;crit pour la premi&eacute;re fois d'une facon d&eacute;finitve, et celui qui nous est parvenu.  -->
+	<!ATTLIST traditioForm
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT rubrum (#PCDATA | %Elemente;)*>
+<!--  Contains: classification given on the document or as an endorsment by the recipient or the archive.  -->
+	<!ATTLIST rubrum
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT provenance (#PCDATA | %Elemente;)*>
+<!--  Contains: The agency, institution, organisation or individual that  created, accumulated and maintained records  -->
+	<!ATTLIST provenance
+		expan CDATA #IMPLIED
+		abbr CDATA #IMPLIED
+		id CDATA #IMPLIED
+		n CDATA #IMPLIED
+	>
+
+<!ELEMENT dateOrig (#PCDATA | %Elemente;)*>
+<!--  Contains: Date in the way given on the document.  -->
+	<!ATTLIST dateOrig
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		rend CDATA #IMPLIED
+		n CDATA #IMPLIED
+		value CDATA #IMPLIED
+	>
+
+<!ELEMENT scribe (#PCDATA | %Elemente;)*>
+<!--  Contains: identifcation (by name or by an abbreviation) of the scribe of the charter  -->
+
+<!ELEMENT facsimiles (#PCDATA | %Elemente;)*>
+<!--  Contains: lists the facsimilia of the given document  -->
+	<!ATTLIST facsimiles
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		rend CDATA #IMPLIED
+		n CDATA #IMPLIED
+	>
+
+<!ELEMENT sealDesc (#PCDATA | %Elemente;)*>
+<!--  Contains: description of the seal  -->
+	<!ATTLIST sealDesc
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT regesta (#PCDATA | %Elemente;)*>
+<!--  Contains: names lists containing the document described by the element.  -->
+	<!ATTLIST regesta
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT class (#PCDATA | %Elemente;)*>
+<!--  Contains: a textual or formal classification of the document (e.g. breve, writ, preceptum, mandato, Bulle, recognitio feodorum, oblatio, transsumptum ...)  -->
+	<!ATTLIST class
+		type CDATA #IMPLIED
+		subtype CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!--
+ ##############   Module: CEI-Text   ##############
+ Elements for the charter text itself
+ -->
+
+<!ELEMENT elongata (#PCDATA | %Elemente;)*>
+<!--  Contains: marks parts of the text in the script the CID describes as follows:
+Les lettres allong&eacute;es (lat.: litterae elongatae), caract&eacute;ris&eacute;es par leur &eacute;longation par rapport aux autres lettres de l'acte par le resserrement g&eacute;n&eacute;ral de l'&eacute;criture, sont utilis&eacute;es pour certains &eacute;l&eacute;ments du texte (*invocation, *suscription, premi&egrave;re ligne, *souscriptions ou *signa, date ...) dans certaines chancelleries (chancellerie pontificale et carolingienne notamment). Elles peuvent aussi &ecirc;tre simplement d&eacute;coratives dans certains actes de nature solennelle.  -->
+	<!ATTLIST elongata
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT datatio (#PCDATA | %Elemente;)*>
+<!--  Contains: marks the part of the text the CID describes as follows:
+La formule de date est, dans le texte d'un acte, l'indication qui permet d'en conna&icirc;tre la date. Elle comporte souvent une *date de temps et une *date de lieu.
+Elle peut &ecirc;tre plac&eacute;e en t&ecirc;te de l'acte (date initiale) ou en fin (date finale) oub bient se trouver partag&eacute;e entre le d&eacute;but et la fin de l'acte. Par exemple, dans les *privil&egrave;ges pontificaux du IXe au XIIe si`cle, on trouve uine 'petite date' (data brevis) qui comporte une indication sommaire (mois et indiction) dans la formule 'scrptum per ... N.', et une 'grande date' (data longa) dnans la formule finale de *recognition au pied de la pi&egrave;ce ('datum per manum ... N.') (Noter que dans les suppliques pontificdales le terme de 'parva data' s'appliqaue &agrave; la date du d&eacute;p&ocirc;t de la supplique).
+Introduite par les mots 'Datum, Actu, Factu, Scriptum, Confectum' etc. (parfois au f&eacute;minin et, plur rarement, au masculin) ou par leurs &eacute;quivalents en langue vulgaire, elle peut se d&eacute;velepper en mentionnant le nom du noaire ou du scribe qui a r&eacute;dig&eacute; ou &eacute;crit l'acte ('Scriptum per manum ...') ou encore de l'officier de chancellerie qui entend donner ainsi une indication sur la responsabilit&eacute; qu'il a prise dans l'exp&eacute;dition de l'acte ('Datum per manum ...')  -->
+	<!ATTLIST datatio
+		type CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT sanctio (#PCDATA | %Elemente;)*>
+<!--  Contains: marks the part of a document the CID describes as follows:
+Les clauses p&eacute;nales (lat.: sanctio negativa) sont des clauses destin&eacute;es &agrave; assurer l'ex&eacute;cution de l'acte en pr&eacute;voyant, contre ceux qui ne l'ex&eacute;cuteraient pas ou qui emp&ecirc;cheraient son ex&eacute;cution, des sanctions temporelles et en les menacant de ch�timents spirituels, ou de l'une autre de m&ecirc;me valeur.  -->
+	<!ATTLIST sanctio
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT apprecatio (#PCDATA | %Elemente;)*>
+<!--  Contains: marks the part of the text definde by the CID as follows: L'apprecation (lat.: apprecatio) est une formule propitiatoire par laquelle, en pendant avec l'incovation initiale, l'acte s'ach&egrave;ve. Elle prend souvent la forme 'In Dei nomine, feliciter. Amen'  -->
+	<!ATTLIST apprecatio
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT subscriptio (#PCDATA | %Elemente;)*>
+<!--  Contains: contains the text of any kind of subscription (autograph, non-autograph, notarial subscription including the signs as monograms etc.  -->
+	<!ATTLIST subscriptio
+		type CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT testes (#PCDATA | %Elemente;)*>
+<!--  Contains: the part of the text naming the witnesses, as described by the CID as follows:
+La liste de t&eacute;moins est l'&eacute;lement de l'acte qui contient les noms des t&eacute;moins de l'acte &eacute;criut ou de l'acte juridique, ou des deux, lesquels constatent l'existence de cet acte et y donnent leur assentiment.  -->
+	<!ATTLIST testes
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT invocatio (#PCDATA | %Elemente;)*>
+<!--  Contains: marks the part of the text the CID describes as follows:
+L'invocation verbale ou simplement invocation (lat. invocatio) est la formule de d&eacute;votion par laquelle s'ouvre le protocole des actes pour que le contenu en soit plac&eacute; sous la protection divine et &eacute;ventuellement (ou secondairement) sous le patronage d'un saint, le tout pouvant s'achever par 'Amen'. Elle peut s'acompagner d'une corix ou d'un *invocation figur&eacute;e.  -->
+	<!ATTLIST invocatio
+		type CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT protocol (#PCDATA | %Elemente;)*>
+<!--  Contains: marks the initial formal part of a document described by the CID as follows:
+Le text s'ins&egrave;re dans un cadre formel initial (le protocole) et final (l'eschatocole), dont les &eacute;l&eacute;ments ne sont pas n&eacute;cessairement formul&eacute;s en fonction de l'acte en question, mais qui r&eacute;pondent aux r&eacute;gles en usage pour un m&ecirc;me type de document, compte tenu de son contenu juridigque et de sa nature diplomatique.  -->
+	<!ATTLIST protocol
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT tenor (#PCDATA | %Elemente;)*>
+<!--  Contains: the text of the document  -->
+	<!ATTLIST tenor
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT salutatio (#PCDATA | %Elemente;)*>
+<!--  Contains: the greeting clause  -->
+	<!ATTLIST salutatio
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		rend CDATA #IMPLIED
+		n CDATA #IMPLIED
+	>
+
+<!ELEMENT petitio (#PCDATA | %Elemente;)*>
+<!--  Contains: marks a part of the document expressing the petition (cfr. the CID:
+La trace de la requ&ecirc;te peut appar&icirc;tre dans le texte m&ecirc;me de l'acte qui en d&eacute;coule sous la forme ad instanciam, ad petitoinem N. (ou une formule analogue).)  -->
+	<!ATTLIST petitio
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT corroboratio (#PCDATA | %Elemente;)*>
+<!--  Contains: marks the part of the document the CID describes as follows:
+Par la clause de corroboration, parfois assorie d'un ordre de mise par &eacute;crit ou d'exp&eacute;dition, (qui peut auusi en &ecirc;tre ditinct: "hanc chartam scriebere jussimus ...") sont annonc&eacute;s les signes de validatio (*souscripiotn: "manupropria subterfiramvimus"; * seings ou signatures: "manibus idoneorum testium signari ..."; sceaux: "de anulo nostro subter signari jussimus, "sigillum nostrum duximus appondendum ..."), en pr&eacute;cisant qu'ils sont appos&eacute;s pour donner validit&eacute; &agrave; l'acte
+ - Soit &agrave; titre de preuve de l'existence de celui-ci (corroboration testimoniale ou probatoire: "In cujuis rei testimonium ..."- Soit pour lui conf&eacute;rer valeur perp&eacute;tuelle (corroboration perp&eacute;tuelle: "Quod ut ratum et stabile in perpetuum permaneat"  -->
+	<!ATTLIST corroboratio
+		type CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT setPhrase (#PCDATA | %Elemente;)*>
+<!--  Contains: any word sequence refering to a #specific# content. The type of the formula should be given in the TYPE-attribute using the semantics of the VID.  -->
+	<!ATTLIST setPhrase
+		type CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT dispositio (#PCDATA | %Elemente;)*>
+<!--  Contains: marks the part of the text described by the CID as follows:
+Le dispositif (lat.: dispositio) est la partie fondamentale du texte, par laquelle l'auteur manifeste sa volont&eacute; et fait na&icirc;tre l'acte juridique ou en reconna&icirc;t l'existence, en d&eacute;terminant sa nature, sa port&eacute;e, ses modalit&eacute;s, - &eacute;ventuellement l'origine de propri&eacute;t&eacute;.
+Le verbe employ&eacute; dans le dispositif oriente sur la nature juridique de l'acte ('concedimus' = 'concessio', 'vendidimus'='venditio' etc.  -->
+	<!ATTLIST dispositio
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT narratio (#PCDATA | %Elemente;)*>
+<!--  Contains: marks the part of the text the CID describes as follows:
+L'expos&eacute; (lat. narratio) est la partie dur texte par laqwuelle sont expliqu&eacute;es les circonstances du *commandement de l'acte, ses raisons, &eacute;ventuellement les ant&eacute;c&eacute;dents de l'affaire (*requ&ecirc;te, *intervention de tiers, production de pi&egrave;ces, enqu&ecirc;tes, litiges, arguments des parties en cause, etc.)  -->
+	<!ATTLIST narratio
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT context (#PCDATA | %Elemente;)*>
+<!--  Contains: marks the part of the document the CID describes as follows:
+Le texte proprement dit est la partie de la teneur se rapportant directement &agrave; l'acte juridique qui s'y trouve mis par &eacute;crit: justification de cet acte, expos&eacute; des circonstances qui l'ont provoqu&eacute;, dispositions, clauses destin&eacute;es &agrave; en pr&eacute;ciser la part&eacute;e et &agrave; en assurer l'ex&eacute;cution.  -->
+	<!ATTLIST context
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT arenga (#PCDATA | %Elemente;)*>
+<!--  Contains: marks the part of the text definde by the CID as follows: Le pr&eacute;ambule (lat. arenga, exordium, proemium) est la partie du texte par laquelle celui-ci est justifi&eacute; de facon g&eacute;n&eacute;rale par des consid&eacute;rations juridiques , religiuese, morales ou simplemtn de convenance (telle qu 'quoniam labilis est memoria').  -->
+	<!ATTLIST arenga
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT publicatio (#PCDATA | %Elemente;)*>
+<!--  Contains: marks the part of a document the CID describes as follows:
+La notification (lat.: notificatio, publicatio, promulgatio) est une formule par laquelle ce qui suit es port&eacute; &agrave; la conaissance.  -->
+	<!ATTLIST publicatio
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT inscriptio (#PCDATA | %Elemente;)*>
+<!--  Contains: marks the part of a document containing the adresse, describe by the CID as follows:
+L'adresse (Lat. inscription, persona salutata) est l'&eacute;l&eacute;ment du protocole par lequel sont indiqu&eacute;s le nom et &eacute;ventuellement les tritres et qualit&eacute;s de la personne (ou des personnes) &agrave; qui l'acte est adress&eacute;, qu ce soit comme b&eacute;n&eacute;ficiaire ou comme ex&eacute;cuteur ou pour simple information.  -->
+	<!ATTLIST inscriptio
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT intitulatio (#PCDATA | %Elemente;)*>
+<!--  Contains: marks the part of the text the CID describes as follows:
+La suscription (lat. intitulatio, superscriptio, persona salutans) est l'&eacute;l&eacute;ment du protocole qui fait conna&icirc;tre le nom de l'auteur de l'acte &eacute;crit et sa titulature. Elle peut prendre un aspect pesonnel et commencer par le pronom Ego, Nos.  -->
+	<!ATTLIST intitulatio
+		type CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT eschatocol (#PCDATA | %Elemente;)*>
+<!--  Contains: marks the part of the document described by the CID as the final part of some stereotypical clauses:
+Le text s'ins&egrave;re dans un cadre formel initial (le protocole) et final (l'eschatocole), dont les &eacute;l&eacute;ments ne sont pas n&eacute;cessairement formul&eacute;s en fonction de l'acte en question, mais qui r&eacute;pondent aux r&eacute;gles en usage pour un m&ecirc;me type de document, compte tenu de son contenu juridigque et de sa nature diplomatique.  -->
+	<!ATTLIST eschatocol
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!--
+ ##############   Module: CEI-Layout   ##############
+ 
+ -->
+
+<!ELEMENT sup (#PCDATA | %Elemente;)*>
+<!--  Contains: marks superscript text in the original  -->
+
+<!--
+ ##############   Module: TEI   ##############
+ Other elements taken from the TEI
+ -->
+
+<!ELEMENT figure (#PCDATA | %Elemente;)*>
+<!--  Contains: the place of a figure  -->
+	<!ATTLIST figure
+		type CDATA #IMPLIED
+		corresp CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		n CDATA #IMPLIED
+	>
+
+<!ELEMENT hi (#PCDATA | %Elemente;)*>
+<!--  Contains: (highlighted) marks a word or phrase as graphically distinct from the surrounding text, for reasons concerning which no claim is made.  -->
+	<!ATTLIST hi
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		rend CDATA #IMPLIED
+	>
+
+<!ELEMENT index (#PCDATA | %Elemente;)*>
+<!--  Contains:     * <index> marks a location to be indexed for whatever purpose.
+      level1 	(first-level index entry) gives the form under which the index entry is to be made.
+      level2 	(second-level index entry) gives the second-level form, if any.
+      level3 	(third-level index entry) gives the third-level form, if any.
+      level4 	(fourth-level index entry) gives the fourth-level form, if any.
+      index 	(index number) indicates which index (of several) the index entry belongs to.
+The tag <index> associates up to four levels of index terms with a specific point in the text. The index terms are supplied in attributes named level1, level2, level3, and level4. An index attribute associates the entry with a particular index, so multiple indices are possible.
+All index terms must be supplied as attribute values; no part of the text itself is taken as a term. This may require words or phrases to be repeated, as illustrated below; it also allows spelling to be normalized, as the example show.  -->
+	<!ATTLIST index
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		level1 CDATA #IMPLIED
+		level2 CDATA #IMPLIED
+		level3 CDATA #IMPLIED
+		level4 CDATA #IMPLIED
+		indexName CDATA #IMPLIED
+		lemma CDATA #IMPLIED
+	>
+
+<!ELEMENT resp (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a phrase describing the nature of a person's intellectual responsibility. (from teiHeader)  -->
+
+<!ELEMENT ptr (#PCDATA | %Elemente;)*>
+<!--  Contains: defines a pointer to another location in the current document in terms of one or more identifiable elements.
+Attribute: target=specifies the destination of the pointer by supplying the values used on the id attribute of one or more other elements in the current document  -->
+	<!ATTLIST ptr
+		target CDATA #IMPLIED
+	>
+
+<!ELEMENT link (#PCDATA | %Elemente;)*>
+<!--  Contains: <link> defines an association or hypertextual link among elements or passages, of some type not more precisely specifiable by other elements.
+Attribute targets=specifies the identifiers of the elements or passages to be linked or associated.  -->
+	<!ATTLIST link
+		targets CDATA #IMPLIED
+	>
+
+<!ELEMENT availability (#PCDATA | %Elemente;)*>
+<!--  Contains: restrictions of availabilty of a text (esp. in the teiHeader)  -->
+
+<!ELEMENT projectDesc (#PCDATA | %Elemente;)*>
+<!--  Contains: 	 (project description) describes in detail the aim or purpose for which an electronic file was encoded, together with any other relevant information concerning the process by which it was assembled or collected.  -->
+
+<!ELEMENT respStmt (#PCDATA | %Elemente;)*>
+<!--  Contains: from teiHeader  -->
+
+<!ELEMENT anchor (#PCDATA | %Elemente;)*>
+<!--  Contains:   -->
+	<!ATTLIST anchor
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		rend CDATA #IMPLIED
+		n CDATA #IMPLIED
+		name CDATA #IMPLIED
+	>
+
+<!ELEMENT span (#PCDATA | %Elemente;)*>
+<!--  Contains:   -->
+	<!ATTLIST span
+		type CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		rend CDATA #IMPLIED
+		n CDATA #IMPLIED
+	>
+
+<!ELEMENT sourceDesc (#PCDATA | %Elemente;)*>
+<!--  Contains: supplies a bibliographic description of the copy text(s) from which an electronic text was derived or generated.  -->
+
+<!ELEMENT listBibl (#PCDATA | %Elemente;)*>
+<!--  Contains: lists any kind of bibliography  -->
+	<!ATTLIST listBibl
+		type CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		rend CDATA #IMPLIED
+		n CDATA #IMPLIED
+	>
+
+<!ELEMENT monogr (#PCDATA | %Elemente;)*>
+<!--  Contains:   -->
+
+<!ELEMENT head (#PCDATA | %Elemente;)*>
+<!--  Contains: 	 (heading) contains any heading, for example, the title of a section, or the heading of a list or glossary.  -->
+
+<!ELEMENT figDesc (#PCDATA | %Elemente;)*>
+<!--  Contains: (Description of Figure) contains a brief prose description of the appearance or content of a graphic figure, for use when documenting an image without displaying it.  -->
+
+<!ELEMENT foreign (#PCDATA | %Elemente;)*>
+<!--  Contains: (foreign) identifies a word or phrase as belonging to some language other than that of the surrounding text.  -->
+	<!ATTLIST foreign
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		n CDATA #IMPLIED
+	>
+
+<!ELEMENT item (#PCDATA | %Elemente;)*>
+<!--  Contains: contains one component of a list.  -->
+
+<!ELEMENT cit (#PCDATA | %Elemente;)*>
+<!--  Contains: A quotation from some other document, together with a bibliographic reference to its source.  -->
+
+<!ELEMENT dateRange (#PCDATA | %Elemente;)*>
+<!--  Contains: from TEI  -->
+	<!ATTLIST dateRange
+		to CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		rend CDATA #IMPLIED
+		n CDATA #IMPLIED
+		from CDATA #IMPLIED
+	>
+
+<!ELEMENT list (#PCDATA | %Elemente;)*>
+<!--  Contains: contains any sequence of items organized as a list.  -->
+
+<!ELEMENT term (#PCDATA | %Elemente;)*>
+<!--  Contains: a general element to mark any fixed term  -->
+	<!ATTLIST term
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT div (#PCDATA | %Elemente;)*>
+<!--  Contains:   -->
+	<!ATTLIST div
+		type CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		rend CDATA #IMPLIED
+		n CDATA #IMPLIED
+	>
+
+<!ELEMENT body (#PCDATA | %Elemente;)*>
+<!--  Contains: Main part of a text - after a front and back matter  -->
+
+<!ELEMENT front (#PCDATA | %Elemente;)*>
+<!--  Contains: (front matter) contains any prefatory matter (headers, title page, prefaces, dedications, etc.) found at the start of a document, before the main body.  -->
+
+<!ELEMENT text (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a text or a corpus of texts  -->
+	<!ATTLIST text
+		type CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		n CDATA #IMPLIED
+		decl CDATA #IMPLIED
+	>
+
+<!ELEMENT back (#PCDATA | %Elemente;)*>
+<!--  Contains: Parts of a text as appendices, indices, bibliography etc.  -->
+
+<!ELEMENT fileDesc (#PCDATA | %Elemente;)*>
+<!--  Contains: a file description, tagged <fileDesc>, containing a full bibliographical description of the computer file itself, from which a user of the text could derive a proper bibliographic citation, or which a librarian or archivist could use in creating a catalogue entry recording its presence within a library or archive. The term computer file here is to be understood as referring to the whole entity or document described by the header, even when this is stored in several distinct operating system files. The file description also includes information about the source or sources from which the electronic document was derived.  -->
+
+<!ELEMENT encodingDesc (#PCDATA | %Elemente;)*>
+<!--  Contains: an encoding description, tagged <encodingDesc>, which describes the relationship between an electronic text and its source or sources. It allows for detailed description of whether (or how) the text was normalized during transcription, how the encoder resolved ambiguities in the source, what levels of encoding or analysis were applied, and similar matters.  -->
+
+<!ELEMENT profileDesc (#PCDATA | %Elemente;)*>
+<!--  Contains: a text profile, tagged <profileDesc>, containing classificatory and contextual information about the text, such as its subject matter, the situation in which it was produced, the individuals described by or participating in producing it, and so forth. Such a text profile is of particular use in highly structured composite texts such as corpora or language collections, where it is often highly desirable to enforce a controlled descriptive vocabulary or to perform retrievals from a body of text in terms of text type or origin. The text profile may however be of use in any form of automatic text processing.  -->
+
+<!ELEMENT ref (#PCDATA | %Elemente;)*>
+<!--  Contains: defines a reference to another location in the current document, in terms of one or more identifiable elements, possibly modified by additional text or comment.
+Attribute: target=specifies the destination of the reference by supplying the value of the id attribute on one or more other elements in the current document.  -->
+	<!ATTLIST ref
+		type CDATA #IMPLIED
+		resp CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		target CDATA #IMPLIED
+	>
+
+<!ELEMENT notesStmt (#PCDATA | %Elemente;)*>
+<!--  Contains: 	 (Notes statement) collects together any notes providing information about a text additional to that recorded in other parts of the bibliographic description.  -->
+
+<!ELEMENT note (#PCDATA | %Elemente;)*>
+<!--  Contains: gives the text of a footnote.
+   * <note> contains a note or annotation.
+      type 	describes the type of note.
+      resp 	(responsible) indicates who is responsible for the annotation: author, editor, translator, etc.
+      place 	indicates where the note appears in the source text.
+      anchored 	indicates whether the copy text shows the exact place of reference for the note.
+      target 	indicates the point of attachment of a note, or the beginning of the span to which the note is attached.
+      targetEnd 	points to the end of the span to which the note is attached, if the note is not embedded in the text at that point.
+
+A note is any additional comment found in a text, marked in some way as being out of the main textual stream. All notes should be marked using the same tag, <note>, whether they appear as block notes in the main text area, at the foot of the page, at the end of the chapter or volume, in the margin, or in some other place.
+
+Notes may be in a different hand or typeface, may be authorial or editorial, and may have been added later. Attributes may be used to specify these and other characteristics of notes, as detailed below.
+
+Where possible, the body of a note should be inserted in the text at the point at which its identifier or mark first appears. This may not be possible for example with marginal notes, which may not be anchored to an exact location. For simplicity, it may be adequate to position marginal notes before the relevant paragraph or other element. In some cases, however, it may be desirable to transcribe notes not at their point of attachment to the text but at their point of appearance (at the end of the volume, or the end of the chapter - not, in general, when the notes appear at the foot of the page); in this case the target and targetEnd attributes should be used to specify the point of attachment. In some cases, the note is explicitly attached not to a point but to a span of text; for a full discussion of pointing to points and spans in the text, see section 6.6 Simple Links and Cross References.  -->
+	<!ATTLIST note
+		type CDATA #IMPLIED
+		resp CDATA #IMPLIED
+		place CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		n CDATA #IMPLIED
+		anchored CDATA #IMPLIED
+		target CDATA #IMPLIED
+		targetEnd CDATA #IMPLIED
+	>
+
+<!ELEMENT group (#PCDATA | %Elemente;)*>
+<!--  Contains: contains the body of a composite text, grouping together a sequence of distinct texts (or groups of such texts) which are regarded as a unit for some purpose, for example the collected works of an author, a sequence of prose essays, etc.  -->
+
+<!ELEMENT graphic (#PCDATA | %Elemente;)*>
+<!--  Contains:   -->
+	<!ATTLIST graphic
+		id CDATA #IMPLIED
+		n CDATA #IMPLIED
+		url CDATA #IMPLIED
+	>
+
+<!ELEMENT titleStmt (#PCDATA | %Elemente;)*>
+<!--  Contains: (title statement) groups information about the title of a work and those responsible for its intellectual content.  -->
+
+<!ELEMENT quote (#PCDATA | %Elemente;)*>
+<!--  Contains: marks text passages containing text of a document inserted in another document (e.g. vidimus, transsumptum, "Vorurkunde") and other parts quoted from texts external zu the actual text.  -->
+	<!ATTLIST quote
+		source CDATA #IMPLIED
+	>
+
+<!ELEMENT editionStmt (#PCDATA | %Elemente;)*>
+<!--  Contains: (edition statement) groups information relating to one edition of a text  -->
+
+<!ELEMENT publicationStmt (#PCDATA | %Elemente;)*>
+<!--  Contains: 	 (publication statement) groups information concerning the publication or distribution of an electronic or other text.  -->
+
+<!ELEMENT seriesStmt (#PCDATA | %Elemente;)*>
+<!--  Contains: from teiHeader  -->
+
+<!ELEMENT revisionDesc (#PCDATA | %Elemente;)*>
+<!--  Contains: a revision history, tagged <revisionDesc>, which allows the encoder to provide a history of changes made during the development of the electronic text. The revision history is important for version control and for resolving questions about the history of a file.  -->
+
+<!--
+ ##############   Module: TEI-Global   ##############
+ The global TEI-elements for any kind of text
+ -->
+
+<!ELEMENT c (#PCDATA | %Elemente;)*>
+<!--  Contains: (character) represents a character. A single character like an punctuation mark should be given as an entity while the <c>-element might be used for marks in printed editions representing figures etc. (e.g. (C.), the three crosses in the MGH-edition) or different letter forms (e.g. long-s)  -->
+	<!ATTLIST c
+		type CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		text CDATA #IMPLIED
+		function CDATA #IMPLIED
+	>
+
+<!ELEMENT lb (#PCDATA | %Elemente;)*>
+<!--  Contains:  (line break) marks the start of a new line in the original as well as in an print  -->
+	<!ATTLIST lb
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		rend CDATA #IMPLIED
+		n CDATA #IMPLIED
+		ed CDATA #IMPLIED
+	>
+
+<!ELEMENT p (#PCDATA | %Elemente;)*>
+<!--  Contains: marks paragraphs  -->
+	<!ATTLIST p
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		rend CDATA #IMPLIED
+		n CDATA #IMPLIED
+		ed CDATA #IMPLIED
+	>
+
+<!ELEMENT pb (#PCDATA | %Elemente;)*>
+<!--  Contains: page break. marks the boundary between one page of a text and the next in a standard reference system.  -->
+	<!ATTLIST pb
+		type CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		n CDATA #IMPLIED
+		ed CDATA #IMPLIED
+	>
+
+<!ELEMENT cb (#PCDATA | %Elemente;)*>
+<!--  Contains: (column break) marks the boundary between one column of a text and the next in a standard reference system.  -->
+	<!ATTLIST cb
+		n CDATA #IMPLIED
+		ed CDATA #IMPLIED
+	>
+
+<!--
+ ##############   Module: TEI-trans   ##############
+ The TEI-elements for transcription of primary sources
+ -->
+
+<!ELEMENT app (#PCDATA | %Elemente;)*>
+<!--  Contains: contains one entry in a critical apparatus, with an optional lemma and at least one reading.  -->
+	<!ATTLIST app
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT space (#PCDATA | %Elemente;)*>
+<!--  Contains: indicates the location of a significant space in the copy text.  -->
+	<!ATTLIST space
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT unclear (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a word, phrase, or passage which cannot be transcribed with certainty because it is illegible or inaudible in the source.  -->
+	<!ATTLIST unclear
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT damage (#PCDATA | %Elemente;)*>
+<!--  Contains: contains an area of damage to the text witness.  -->
+	<!ATTLIST damage
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT handShift (#PCDATA | %Elemente;)*>
+<!--  Contains: marks the beginning of a sequence of text written in a new hand, or of a change in the scribe, writing style, ink or character of the document hand.  -->
+	<!ATTLIST handShift
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT handList (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a series of hand elements listing the different hands of the source.  -->
+	<!ATTLIST handList
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT hand (#PCDATA | %Elemente;)*>
+<!--  Contains: used in the header to define each distinct scribe or handwriting style.  -->
+	<!ATTLIST hand
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT restore (#PCDATA | %Elemente;)*>
+<!--  Contains: indicates restoration of text to an earlier state by cancellation of an editorial or authorial marking or instruction.  -->
+	<!ATTLIST restore
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT delSpan (#PCDATA | %Elemente;)*>
+<!--  Contains: marks the beginning of a longer sequence of text deleted, marked as deleted, or otherwise signaled as superfluous or spurious by an author, scribe, annotator, or corrector.  -->
+	<!ATTLIST delSpan
+		type CDATA #IMPLIED
+		resp CDATA #IMPLIED
+		cert CDATA #IMPLIED
+		hand CDATA #IMPLIED
+		status CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT addSpan (#PCDATA | %Elemente;)*>
+<!--  Contains: marks the beginning of a longer sequence of text added by an author, scribe, annotator or corrector (see also add) in the transcription of a primary source.  -->
+	<!ATTLIST addSpan
+		resp CDATA #IMPLIED
+		place CDATA #IMPLIED
+		cert CDATA #IMPLIED
+		hand CDATA #IMPLIED
+		to CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT gap (#PCDATA | %Elemente;)*>
+<!--  Contains: indicates a point where material has been omitted in a transcription, whether for editorial reasons described in the TEI header, as part of sampling practice, or because the material is illegible or inaudible.  -->
+	<!ATTLIST gap
+		resp CDATA #IMPLIED
+		reason CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT add (#PCDATA | %Elemente;)*>
+<!--  Contains: contains letters, words, or phrases inserted in the text by an author, scribe, annotator, or corrector in a transcription of a primary source.  -->
+	<!ATTLIST add
+		resp CDATA #IMPLIED
+		place CDATA #IMPLIED
+		cert CDATA #IMPLIED
+		hand CDATA #IMPLIED
+		to CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT sic (#PCDATA | %Elemente;)*>
+<!--  Contains: contains text reproduced although apparently incorrect or inaccurate.  -->
+	<!ATTLIST sic
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT rdg (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a single reading within a textual variation  -->
+	<!ATTLIST rdg
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT supplied (#PCDATA | %Elemente;)*>
+<!--  Contains: signifies text supplied by the transcriber or editor in place of text which cannot be read, either because of physical damage or loss in the original or because it is illegible for any reason.  -->
+	<!ATTLIST supplied
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT lem (#PCDATA | %Elemente;)*>
+<!--  Contains: contains the lemma, or base text, of a textual variation.  -->
+	<!ATTLIST lem
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT rdgGrp (#PCDATA | %Elemente;)*>
+<!--  Contains: within a textual variation, groups two or more readings perceived to have a genetic relationship or other affinity.  -->
+	<!ATTLIST rdgGrp
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT witDetail (#PCDATA | %Elemente;)*>
+<!--  Contains: gives further information about a particular witness, or witnesses, to a particular reading.  -->
+	<!ATTLIST witDetail
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT wit (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a list of one or more sigla of witnesses attesting a given reading, in a textual variation.  -->
+	<!ATTLIST wit
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT witList (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a list of all the witnesses referred to in wit elements or wit attributes within the critical apparatus.  -->
+	<!ATTLIST witList
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT witness (#PCDATA | %Elemente;)*>
+<!--  Contains: contains either a description of a single textual witness referred to within the critical apparatus, or a list of witnesses which is to be referred to by a single sigil.  -->
+	<!ATTLIST witness
+		type CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		sigil CDATA #IMPLIED
+	>
+
+<!ELEMENT witStart (#PCDATA | %Elemente;)*>
+<!--  Contains: indicates the beginning, or resumption, of the text of a fragmentary witness.(from TEI)  -->
+	<!ATTLIST witStart
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT witEnd (#PCDATA | %Elemente;)*>
+<!--  Contains: indicates the end, or suspension, of the text of a fragmentary witness.  -->
+	<!ATTLIST witEnd
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT lacunaStart (#PCDATA | %Elemente;)*>
+<!--  Contains: indicates the beginning of a lacuna in the text of a mostly complete textual witness  -->
+	<!ATTLIST lacunaStart
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT lacunaEnd (#PCDATA | %Elemente;)*>
+<!--  Contains: indicates the end of a lacuna in a mostly complete textual witness.  -->
+	<!ATTLIST lacunaEnd
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT corr (#PCDATA | %Elemente;)*>
+<!--  Contains: contains the correct form of a passage apparently erroneous in the copy text.  -->
+	<!ATTLIST corr
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT expan (#PCDATA | %Elemente;)*>
+<!--  Contains: contains the expansion of an abbreviation.  -->
+	<!ATTLIST expan
+		abbr CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT abbr (#PCDATA | %Elemente;)*>
+<!--  Contains: contains an abbreviation of any sort  -->
+	<!ATTLIST abbr
+		type CDATA #IMPLIED
+		resp CDATA #IMPLIED
+		expan CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT del (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a letter, word or passage deleted, marked as deleted, or otherwise indicated as superfluous or spurious in the copy text by an author, scribe, annotator, or corrector.  -->
+	<!ATTLIST del
+		type CDATA #IMPLIED
+		resp CDATA #IMPLIED
+		cert CDATA #IMPLIED
+		hand CDATA #IMPLIED
+		status CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!--
+ ##############   Module: TEI-name   ##############
+ The TEI-elements for persons and names
+ -->
+
+<!ELEMENT genName (#PCDATA | %Elemente;)*>
+<!--  Contains: ontains a name component used to indicating generational information, such as Junior, or a number used in a monarch's name.  -->
+	<!ATTLIST genName
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT persName (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a proper noun or proper-noun phrase referring to a person, possibly including any or all of the person's forenames, surnames, honorifics, added names, etc.  -->
+	<!ATTLIST persName
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		reg CDATA #IMPLIED
+	>
+
+<!ELEMENT surname (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a family (inherited) name, as opposed to a given, baptismal, or nick name.  -->
+	<!ATTLIST surname
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT foreName (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a forename, given or baptismal name.  -->
+	<!ATTLIST foreName
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT roleName (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a name component which indicates that the referent has a particular role or position in society, such as an official title or rank.  -->
+	<!ATTLIST roleName
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT nameLink (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a connecting phrase or link used within a name but not regarded as part of it, such as van der or of.  -->
+	<!ATTLIST nameLink
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT name (#PCDATA | %Elemente;)*>
+<!--  Contains: 	 (name, proper noun) contains a proper noun or noun phrase.  -->
+	<!ATTLIST name
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		rend CDATA #IMPLIED
+		n CDATA #IMPLIED
+		reg CDATA #IMPLIED
+		key CDATA #IMPLIED
+	>
+
+<!ELEMENT orgName (#PCDATA | %Elemente;)*>
+<!--  Contains: contains an organizational name.  -->
+	<!ATTLIST orgName
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT orgTitle (#PCDATA | %Elemente;)*>
+<!--  Contains: contains the proper name component of an organizational name.  -->
+	<!ATTLIST orgTitle
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT orgType (#PCDATA | %Elemente;)*>
+<!--  Contains: indicates a part of the organization name which contains information about the organization's structure or function.  -->
+	<!ATTLIST orgType
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT orgDivn (#PCDATA | %Elemente;)*>
+<!--  Contains:  indicates a division, branch or department specified in an organizational name.  -->
+	<!ATTLIST orgDivn
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT nameSort (#PCDATA | %Elemente;)*>
+<!--  Contains: gives the internal hierarchy of a multipart name, the attrib specifies the sort order of the name component in relation to others within the personal name.  -->
+	<!ATTLIST nameSort
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT addName (#PCDATA | %Elemente;)*>
+<!--  Contains: contains an additional name component, such as a nickname, epithet, or alias, or any other descriptive phrase used within a personal name.  -->
+	<!ATTLIST addName
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!--
+ ##############   Module: TEI-date   ##############
+ The TEI-elements for dates
+ -->
+
+<!ELEMENT date (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a date in any format.
+any date written on the document (by the issuer, by the recipient, by an archivist or by anybody else) or given by the editor.
+While used as direct child of <chDesc> it is understood as the date of issuing the charter as it is seen be the editor.  -->
+	<!ATTLIST date
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		calendar CDATA #IMPLIED
+		value CDATA #IMPLIED
+		certainty CDATA #IMPLIED
+	>
+
+<!ELEMENT time (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a phrase defining a time of day in any format.  -->
+	<!ATTLIST time
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT dateStruct (#PCDATA | %Elemente;)*>
+<!--  Contains: (from TEI)  -->
+	<!ATTLIST dateStruct
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT timeStruct (#PCDATA | %Elemente;)*>
+<!--  Contains: contains an internally structured representation for a time of day.  -->
+	<!ATTLIST timeStruct
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT day (#PCDATA | %Elemente;)*>
+<!--  Contains: the day component of a structured date.  -->
+	<!ATTLIST day
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT week (#PCDATA | %Elemente;)*>
+<!--  Contains: the week component of a structured date.  -->
+	<!ATTLIST week
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT month (#PCDATA | %Elemente;)*>
+<!--  Contains: the month component of a structured date.  -->
+	<!ATTLIST month
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT year (#PCDATA | %Elemente;)*>
+<!--  Contains: the year component of a date.  -->
+	<!ATTLIST year
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT second (#PCDATA | %Elemente;)*>
+<!--  Contains: the second component of a structured time-expression.  -->
+	<!ATTLIST second
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT minute (#PCDATA | %Elemente;)*>
+<!--  Contains:  the minute component of a structured time-expression.  -->
+	<!ATTLIST minute
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT occasion (#PCDATA | %Elemente;)*>
+<!--  Contains: a temporal expression (either a date or a time) given in terms of a named occasion such as a holiday, a named time of day, or some notable event.  -->
+	<!ATTLIST occasion
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT dateSort (#PCDATA | %Elemente;)*>
+<!--  Contains: date in a form for sorting  -->
+	<!ATTLIST dateSort
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		value CDATA #IMPLIED
+	>
+
+<!ELEMENT hour (#PCDATA | %Elemente;)*>
+<!--  Contains: the hour component of a temporal expression  -->
+	<!ATTLIST hour
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!--
+ ##############   Module: TEI-place   ##############
+ The TEI-elements for places and geographic names
+ -->
+
+<!ELEMENT settlement (#PCDATA | %Elemente;)*>
+<!--  Contains: contains the name of the smallest component of a place name expressed as a hierarchy of geo-political or administrative units as in Rochester, New York; Glasgow, Scotland.  -->
+	<!ATTLIST settlement
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		reg CDATA #IMPLIED
+	>
+
+<!ELEMENT region (#PCDATA | %Elemente;)*>
+<!--  Contains: in an address, contains the state, province, county or region name; in a place name given as a hierarchy of geo-political units, the region is larger or administratively superior to the settlement and smaller or administratively less important  -->
+	<!ATTLIST region
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		reg CDATA #IMPLIED
+	>
+
+<!ELEMENT country (#PCDATA | %Elemente;)*>
+<!--  Contains: in an address, gives the name of the nation, country, colony, or commonwealth; in a place name given as a hierarchy of geo-political units, the country is larger or administratively superior to the region and smaller than the bloc.  -->
+	<!ATTLIST country
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		reg CDATA #IMPLIED
+	>
+
+<!ELEMENT bloc (#PCDATA | %Elemente;)*>
+<!--  Contains: a geo-political unit containing one or more nation states.  -->
+	<!ATTLIST bloc
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT geogName (#PCDATA | %Elemente;)*>
+<!--  Contains: a name associated with some geographical feature such as Windrush Valley or Mount Sinai.  -->
+	<!ATTLIST geogName
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		n CDATA #IMPLIED
+		reg CDATA #IMPLIED
+	>
+
+<!ELEMENT geog (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a common noun identifying some geographical feature contained within a geographic name, such as valley, mount etc.  -->
+	<!ATTLIST geog
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT offset (#PCDATA | %Elemente;)*>
+<!--  Contains: that part of a relative temporal or spatial expression which indicates the direction of the offset between the two place names, dates, or times involved in the expression.  -->
+	<!ATTLIST offset
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT distance (#PCDATA | %Elemente;)*>
+<!--  Contains:  that part of a relative temporal or spatial expression which indicates the distance between the place or time denoted by it and the place or time referred to within it.  -->
+	<!ATTLIST distance
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT placeName (#PCDATA | %Elemente;)*>
+<!--  Contains: contains an absolute or relative place name.  -->
+	<!ATTLIST placeName
+		type CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		reg CDATA #IMPLIED
+	>
+
+<!--
+ ##############   Module: TEI-Bibl   ##############
+ The TEI-elements for bibliographic information
+ -->
+
+<!ELEMENT author (#PCDATA | %Elemente;)*>
+<!--  Contains: The author of a bibliographic entity  -->
+
+<!ELEMENT bibl (#PCDATA | %Elemente;)*>
+<!--  Contains: (bibliographic citation) contains a loosely-structured bibliographic citation of which the sub-components may or may not be explicitly tagged.  -->
+	<!ATTLIST bibl
+		type CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT pubPlace (#PCDATA | %Elemente;)*>
+<!--  Contains: (from TEI)  -->
+
+<!ELEMENT edition (#PCDATA | %Elemente;)*>
+<!--  Contains: the edition in an bibliographic reference  -->
+
+<!ELEMENT publisher (#PCDATA | %Elemente;)*>
+<!--  Contains: provides the name of the organization responsible for the publication or distribution of a bibliographic item.  -->
+
+<!ELEMENT biblStruct (#PCDATA | %Elemente;)*>
+<!--  Contains:  (structured bibliographic citation) contains a structured bibliographic citation, in which only bibliographic subelements appear and in a specified order.  -->
+
+<!ELEMENT title (#PCDATA | %Elemente;)*>
+<!--  Contains: The title of a bibliographic reference  -->
+
+<!ELEMENT imprint (#PCDATA | %Elemente;)*>
+<!--  Contains: groups information relating to the publication or distribution of a bibliographic item.  -->
+
+<!--
+ ##############   Module: TEI-master   ##############
+ The TEI elements for mansucript description
+ -->
+
+<!ELEMENT handDesc (#PCDATA | %Elemente;)*>
+<!--  Contains: describes a particular writing style or hand identified within a document  -->
+	<!ATTLIST handDesc
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+		rend CDATA #IMPLIED
+		n CDATA #IMPLIED
+		scribe CDATA #IMPLIED
+		medium CDATA #IMPLIED
+		scope CDATA #IMPLIED
+		script CDATA #IMPLIED
+	>
+
+<!ELEMENT support (#PCDATA | %Elemente;)*>
+<!--  Contains: describes the material on which the document is written. Contains full text or a element structure with compulsory element <material>.  -->
+	<!ATTLIST support
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT extent (#PCDATA | %Elemente;)*>
+<!--  Contains: describes the approximate size of the electronic text as stored on some carrier medium, specified in any convenient units.
+In Context of document description the <extent> element is principally a specification of the number of leaves or bifolia a document contains, but may also contain any number of other measurements carried out on the document. Such measurements may be specifically marked using the phrase level <dimensions> element, as in the following example, or left as plain prose.
+Since the <dimensions> element is available for use anywhere in a description, the cataloguer may choose to discuss (for example) dimensions of miniatures at the same time as describing the miniatures, rather than specify that information within the <extent> element.  -->
+	<!ATTLIST extent
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT collation (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a description of how the leaves or bifolia are physically arranged  -->
+	<!ATTLIST collation
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT layout (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a description of ruling technique and layout.  -->
+	<!ATTLIST layout
+		columns CDATA #IMPLIED
+		ruledLines CDATA #IMPLIED
+		writtenLines CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT msWriting (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a description of all the different kinds of writing used in a document  -->
+	<!ATTLIST msWriting
+		hands CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT decoration (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a description of the decoration of a document, either as a sequence of paragraphs, or as a sequence of topically organised decoNote element.  -->
+	<!ATTLIST decoration
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT bindingDesc (#PCDATA | %Elemente;)*>
+<!--  Contains: describes the present and former bindings of a document, either as a series of paragraphs or as a series of distinct binding elements, one for each binding of the document.  -->
+	<!ATTLIST bindingDesc
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT foliation (#PCDATA | %Elemente;)*>
+<!--  Contains: describes the numbering system or systems used to count the leaves or pages in a codex.  -->
+	<!ATTLIST foliation
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT condition (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a description of the physical condition of the document.  -->
+	<!ATTLIST condition
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT seal (#PCDATA | %Elemente;)*>
+<!--  Contains: Marks the place of a the seal in a text  -->
+
+<!ELEMENT teiHeader (#PCDATA | %Elemente;)*>
+<!--  Contains: contains information on the encoding of the text. Every TEI-conformant text must carry such a set of descriptions and prefixed to it  -->
+	<!ATTLIST teiHeader
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT binding (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a description of one binding, i.e. type of covering, boards, etc. applied to a document  -->
+	<!ATTLIST binding
+		contemporary CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT material (#PCDATA | %Elemente;)*>
+<!--  Contains: describes the material of the writing support  -->
+	<!ATTLIST material
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT dimensions (#PCDATA | %Elemente;)*>
+<!--  Contains: The element is available for use anywhere in a description. It may be used to discuss (for example) dimensions of miniatures at the same time as describing the miniatures, rather than specify that information within the <extent> element.  -->
+	<!ATTLIST dimensions
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT decoNote (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a note describing either a decorative component of a document, or a fairly homogenous class of such components.  -->
+	<!ATTLIST decoNote
+		type CDATA #IMPLIED
+		subtype CDATA #IMPLIED
+		figurative CDATA #IMPLIED
+		technique CDATA #IMPLIED
+		quality CDATA #IMPLIED
+		illustrative CDATA #IMPLIED
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT physicalDesc (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a formal description of the document excluding text and legal content, follows the rules of the MASTER-DTD.  -->
+	<!ATTLIST physicalDesc
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
+<!ELEMENT additions (#PCDATA | %Elemente;)*>
+<!--  Contains: contains a description of any significant additions found within a document, such as marginalia or other annotations as long as they are not a part of the bureaucratic process of the writing, keeping and using ot the document.  -->
+	<!ATTLIST additions
+		id CDATA #IMPLIED
+		lang CDATA #IMPLIED
+	>
+
