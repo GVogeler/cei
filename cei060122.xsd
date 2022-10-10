@@ -5,9 +5,7 @@
   
   http://www.cei.lmu.de/
   
-  It is a living document, but document validated against an older version of this document should remain valid with newer.
-  
-  The recent development of this schema is recorded at https://github.com/GVogeler/cei
+  This is the legace document with last change in 2017. It has been replaced by cei.xsd.
   
   -->
   <xs:import namespace="http://www.w3.org/XML/1998/namespace"

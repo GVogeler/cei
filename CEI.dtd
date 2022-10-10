@@ -4,6 +4,8 @@
 ** Version 1.0.1 - 2009-04-29
 ** A DTD including all names proposed by the CEI for use in charter markup as elements.
 ** no hierarchy and order of the elements
+** This is the original main reference representing only the taglibrary with no further structure. A more structured version is continuously update in cei.xsd (and older versions up to 2017 in cei060222.xsd
+** this version is mainly kept for documentation reasons. Current work on CEI is documented in cei.xsd and the proposal to align CEI with TEI P5 in htts://github.com/GVogeler/CEI2TEI
 **
 -->
 
